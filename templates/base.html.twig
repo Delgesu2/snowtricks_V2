@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>{% block title %}Welcome!{% endblock %}</title>
+        {% block stylesheets %}{% endblock %}
+    </head>
+    <body>
+        <ul style="display: flex; justify-content: space-between; list-style:none; width: 100%; background:rgba(0,0,0,0.5); color: #fff; margin: 0; padding: 10px;">
+            {% if is_granted("ROLE_USER") %}
+                <li><a href="{{ path("trick_add") }}">Ajouter</a></li>
+            {% endif %}
+        </ul>
+        {% block body %}{% endblock %}
+        {% block javascripts %}
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+        {% endblock %}
+    </body>
+</html>

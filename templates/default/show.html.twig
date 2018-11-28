@@ -1,0 +1,14 @@
+{% extends 'base.html.twig' %}
+
+
+{% block body %}
+    <h1>{{ trick.name }}</h1>
+    <p><img src="{{ asset('uploads/' ~ trick.mainImage.path) }}" alt="{{ trick.name }}" /></p>
+    {{ trick.description|raw }}
+
+    <ul>
+        {% for comment in trick.comments %}
+            <li>{{ comment.author.userName }} : {{ comment.content }}</li>
+        {% endfor %}
+    </ul>
+{% endblock %}

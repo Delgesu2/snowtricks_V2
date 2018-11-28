@@ -1,0 +1,8 @@
+App\Entity\User:
+    user_{1..20}:
+        email: 'email+<current()>\@email.com'
+        plainPassword: 'password'
+        userName: '<username()>'
+        avatar: 'image.png'
+        role: 'ROLE_USER'
+        validatedAt: '<dateTime()>'

@@ -1,0 +1,5 @@
+App\Entity\Comment:
+    comment_{1..40}:
+        author: '@user_1'
+        trick: '@trick_<current()>'
+        content: 'COntenu du commentaire'

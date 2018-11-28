@@ -1,0 +1,8 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    {% if error is not null %}
+        {{ error.message }}
+    {% endif %}
+    {{ form(form) }}
+{% endblock %}

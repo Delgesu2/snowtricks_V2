@@ -1,0 +1,7 @@
+<div id="image-{{ form.vars.name }}">
+    {% if form.vars.data is not null and form.vars.data.path is not null %}
+        <img src="{{ asset("uploads/" ~ form.vars.data.path) }}"/>
+    {% endif %}
+    {{ form_row(form) }}
+    <a href="#" data-rel="#image-{{ form.vars.name }}" class="btn-delete">Supprimer</a>
+</div>

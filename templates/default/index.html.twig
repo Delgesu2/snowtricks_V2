@@ -1,0 +1,27 @@
+{% extends 'base.html.twig' %}
+
+
+{% block body %}
+    <table width="100%">
+        <thead>
+            <tr>
+                <th>Image</th>
+                <th>Nom</th>
+                <th>Créateur</th>
+                <th>Catégorie</th>
+                <th>&nbsp;</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for trick in tricks %}
+                <tr>
+                    <td><img src="{{ asset('uploads/' ~ trick.mainImage) }}" alt="{{ trick.name }}" /></td>
+                    <td>{{ trick.name }}</td>
+                    <td>{{ trick.createdBy.userName ?? "Utilisateur inconnu" }}</td>
+                    <td>{{ trick.category.name }}</td>
+                    <td><a href="{{ path("show", { slug: trick.slug }) }}">Voir</a></td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}
