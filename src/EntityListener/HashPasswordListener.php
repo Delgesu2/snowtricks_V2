@@ -1,6 +1,6 @@
 <?php
 
-namespace App\EventListener;
+namespace App\EntityListener;
 
 use App\Entity\User;
 use Doctrine\ORM\Event\LifecycleEventArgs;
@@ -8,7 +8,7 @@ use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
 
 /**
  * Class HashPasswordListener
- * @package App\EventListener
+ * @package App\EntityListener
  */
 class HashPasswordListener
 {

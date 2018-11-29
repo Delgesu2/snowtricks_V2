@@ -1,17 +1,16 @@
 <?php
 
-namespace App\EventListener;
+namespace App\EntityListener;
 
-use App\Entity\Trick;
 use App\Entity\User;
 use App\Utils\Slugify;
 use Doctrine\ORM\Event\LifecycleEventArgs;
 
 /**
- * Class SlugTrickNameListener
- * @package App\EventListener
+ * Class SlugUserNameListener
+ * @package App\EntityListener
  */
-class SlugTrickNameListener
+class SlugUserNameListener
 {
     /**
      * @var Slugify
@@ -28,22 +27,23 @@ class SlugTrickNameListener
     }
 
     /**
-     * @param Trick $trick
+     * @param User $user
      * @param LifecycleEventArgs $eventArgs
      * @throws \Exception
      */
-    public function prePersist(Trick $trick, LifecycleEventArgs $eventArgs): void
+    public function prePersist(User $user, LifecycleEventArgs $eventArgs): void
     {
-        $trick->setSlug($this->slugify::transform($trick->getName()));
+        $user->setSlug($this->slugify::transform($user->getUserName()));
     }
 
     /**
-     * @param Trick $trick
+     * @param User $user
      * @param LifecycleEventArgs $eventArgs
+     * @throws \Exception
      */
-    public function preUpdate(Trick $trick, LifecycleEventArgs $eventArgs): void
+    public function preUpdate(User $user, LifecycleEventArgs $eventArgs): void
     {
-        $trick->setSlug($this->slugify::transform($trick->getName()));
+        $user->setSlug($this->slugify::transform($user->getUserName()));
     }
 
 }

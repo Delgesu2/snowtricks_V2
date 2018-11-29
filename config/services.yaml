@@ -35,37 +35,13 @@ services:
         class: App\Security\Authenticator\UserAuthenticator
         autowire: true
 
-    App\EventListener\HashPasswordListener:
+    App\EntityListener\:
+        resource: '../src/EntityListener'
         autowire: true
         tags:
             - { name: doctrine.orm.entity_listener }
 
-    App\EventListener\SlugUserNameListener:
-        autowire: true
-        tags:
-            - { name: doctrine.orm.entity_listener }
+    app.manager.user:
+        class: App\Manager\UserManager
 
-    App\EventListener\SlugTrickNameListener:
-        autowire: true
-        tags:
-            - { name: doctrine.orm.entity_listener }
-
-    App\EventListener\TimestampableTrickListener:
-        autowire: true
-        tags:
-            - { name: doctrine.orm.entity_listener }
-
-    App\EventListener\CommentTrickListener:
-        autowire: true
-        tags:
-            - { name: doctrine.orm.entity_listener }
-
-    App\EventListener\RandomImageListener:
-        autowire: true
-        tags:
-            - { name: doctrine.orm.entity_listener }
-
-    App\EventListener\UploadImageListener:
-        autowire: true
-        tags:
-            - { name: doctrine.orm.entity_listener }
+    App\Manager\UserManagerInterface: '@app.manager.user'

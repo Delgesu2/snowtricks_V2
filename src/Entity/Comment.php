@@ -10,7 +10,7 @@ use Symfony\Component\Security\Core\User\UserInterface;
  * @package App\Entity
  * @ORM\Entity(repositoryClass="App\Repository\CommentRepository")
  * @ORM\EntityListeners({
- *     "App\EventListener\CommentTrickListener"
+ *     "App\EntityListener\CommentTrickListener"
  * })
  */
 class Comment

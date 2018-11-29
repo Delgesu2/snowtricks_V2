@@ -11,7 +11,7 @@ use Symfony\Component\Validator\Constraints as Assert;
  * @package App\Entity
  * @ORM\Entity(repositoryClass="App\Repository\ImageRepository")
  * @ORM\EntityListeners({
- *     "App\EventListener\UploadImageListener"
+ *     "App\EntityListener\UploadImageListener"
  * })
  */
 class Image

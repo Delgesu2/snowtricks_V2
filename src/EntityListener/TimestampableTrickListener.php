@@ -1,6 +1,6 @@
 <?php
 
-namespace App\EventListener;
+namespace App\EntityListener;
 
 use App\Entity\Trick;
 use App\Entity\User;
@@ -10,7 +10,7 @@ use Symfony\Component\Security\Core\Authentication\Token\Storage\TokenStorageInt
 
 /**
  * Class TimestampableTrickListener
- * @package App\EventListener
+ * @package App\EntityListener
  */
 class TimestampableTrickListener
 {

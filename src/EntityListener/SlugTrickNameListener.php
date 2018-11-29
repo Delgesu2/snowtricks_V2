@@ -1,6 +1,6 @@
 <?php
 
-namespace App\EventListener;
+namespace App\EntityListener;
 
 use App\Entity\Trick;
 use App\Entity\User;
@@ -8,11 +8,25 @@ use App\Utils\Slugify;
 use Doctrine\ORM\Event\LifecycleEventArgs;
 
 /**
- * Class RandomImageListener
- * @package App\EventListener
+ * Class SlugTrickNameListener
+ * @package App\EntityListener
  */
-class RandomImageListener
+class SlugTrickNameListener
 {
+    /**
+     * @var Slugify
+     */
+    private $slugify;
+
+    /**
+     * SlugUserNameListener constructor.
+     * @param Slugify $slugify
+     */
+    public function __construct(Slugify $slugify)
+    {
+        $this->slugify = $slugify;
+    }
+
     /**
      * @param Trick $trick
      * @param LifecycleEventArgs $eventArgs
@@ -20,7 +34,7 @@ class RandomImageListener
      */
     public function prePersist(Trick $trick, LifecycleEventArgs $eventArgs): void
     {
-        $trick->setMainImage($trick->getRandomImage()->getPath());
+        $trick->setSlug($this->slugify::transform($trick->getName()));
     }
 
     /**
@@ -29,7 +43,7 @@ class RandomImageListener
      */
     public function preUpdate(Trick $trick, LifecycleEventArgs $eventArgs): void
     {
-        $trick->setMainImage($trick->getRandomImage()->getPath());
+        $trick->setSlug($this->slugify::transform($trick->getName()));
     }
 
 }

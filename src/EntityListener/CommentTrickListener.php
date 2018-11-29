@@ -1,6 +1,6 @@
 <?php
 
-namespace App\EventListener;
+namespace App\EntityListener;
 
 use App\Entity\Comment;
 use Doctrine\ORM\Event\LifecycleEventArgs;
@@ -8,7 +8,7 @@ use Symfony\Component\Security\Core\Authentication\Token\Storage\TokenStorageInt
 
 /**
  * Class CommentTrickListener
- * @package App\EventListener
+ * @package App\EntityListener
  */
 class CommentTrickListener
 {

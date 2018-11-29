@@ -1,6 +1,6 @@
 <?php
 
-namespace App\EventListener;
+namespace App\EntityListener;
 
 use App\Entity\Image;
 use App\Utils\Uploader;
@@ -8,7 +8,7 @@ use Doctrine\ORM\Event\LifecycleEventArgs;
 
 /**
  * Class UploadImageListener
- * @package App\EventListener
+ * @package App\EntityListener
  */
 class UploadImageListener
 {
