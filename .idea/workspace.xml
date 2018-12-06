@@ -1,60 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="3f86b190-6a91-4dd1-82fb-18707a929c33" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/public/js/formtrick.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/js/homepage.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/js/registration.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/js/removeField.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/js/style.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/js/updateFormtrick.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Form/Handler/EmailCheckHandler.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Form/Type/Security/EmailCheckType.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/default/home.html.twig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/default/selected_trick.html.twig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/default/tricks.html.twig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/security/email_check.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/snowtricks.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/snowtricks.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/bundles.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/bundles.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fixtures/trick.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/fixtures/trick.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/DefaultController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/DefaultController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/SecurityController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/SecurityController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/TrickController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/TrickController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/UserController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/UserController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/Traits/PasswordTrait.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Traits/PasswordTrait.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/Traits/ProfileTrait.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Traits/ProfileTrait.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/Traits/ValidationTrait.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Traits/ValidationTrait.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/Trick.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Trick.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/User.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/EntityListener/CommentTrickListener.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/EntityListener/CommentTrickListener.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/EntityListener/RandomImageListener.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/EntityListener/RandomImageListener.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/EntityListener/RegisterListener.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/EntityListener/RegisterListener.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/EntityListener/SlugTrickNameListener.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/EntityListener/SlugTrickNameListener.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/EntityListener/SlugUserNameListener.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/EntityListener/SlugUserNameListener.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/EntityListener/TimestampableTrickListener.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/EntityListener/TimestampableTrickListener.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/EntityListener/UploadImageListener.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/EntityListener/UploadImageListener.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Exception/AccountUnvalidatedException.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Exception/AccountUnvalidatedException.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Form/Handler/AbstractHandler.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/Handler/AbstractHandler.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Form/Handler/TrickHandler.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/Handler/TrickHandler.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Form/Type/Security/LoginType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/Type/Security/LoginType.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Manager/Interfaces/UserManagerInterface.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Manager/Interfaces/UserManagerInterface.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Manager/UserManager.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Manager/UserManager.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Security/Authenticator/UserAuthenticator.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Security/Authenticator/UserAuthenticator.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Security/UserChecker.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Security/UserChecker.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Utils/Mailer.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Utils/Mailer.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Utils/Slugify.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Utils/Slugify.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Utils/Uploader.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Utils/Uploader.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/symfony.lock" beforeDir="false" afterPath="$PROJECT_DIR$/symfony.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/base.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/default/show.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/default/show.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/security/login.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/security/login.html.twig" afterDir="false" />
-    </list>
+    <list default="true" id="3f86b190-6a91-4dd1-82fb-18707a929c33" name="Default" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -94,6 +41,9 @@
       </path>
     </expand>
     <select />
+  </component>
+  <component name="FavoritesManager">
+    <favorites_list name="oc-daphp-p6" />
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="253">
@@ -169,7 +119,7 @@
       <file leaf-file-name="DefaultController.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Controller/DefaultController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="555">
+            <state relative-caret-position="463">
               <caret line="42" column="5" selection-start-line="42" selection-start-column="5" selection-end-line="42" selection-end-column="5" />
             </state>
           </provider>
@@ -399,10 +349,9 @@
       <path value="$PROJECT_DIR$/vendor/doctrine/doctrine-fixtures-bundle" />
     </include_path>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-7" />
-    <option name="width" value="982" />
-    <option name="height" value="1047" />
+  <component name="ProjectFrameBounds">
+    <option name="width" value="1807" />
+    <option name="height" value="1043" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
@@ -415,72 +364,6 @@
             <path>
               <item name="oc-daphp-p6" type="b2602c69:ProjectViewProjectNode" />
               <item name="oc-daphp-p6" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="oc-daphp-p6" type="b2602c69:ProjectViewProjectNode" />
-              <item name="oc-daphp-p6" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="oc-daphp-p6" type="b2602c69:ProjectViewProjectNode" />
-              <item name="oc-daphp-p6" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="Controller" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="oc-daphp-p6" type="b2602c69:ProjectViewProjectNode" />
-              <item name="oc-daphp-p6" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="EntityListener" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="oc-daphp-p6" type="b2602c69:ProjectViewProjectNode" />
-              <item name="oc-daphp-p6" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="Form" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="oc-daphp-p6" type="b2602c69:ProjectViewProjectNode" />
-              <item name="oc-daphp-p6" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="Form" type="462c0819:PsiDirectoryNode" />
-              <item name="Handler" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="oc-daphp-p6" type="b2602c69:ProjectViewProjectNode" />
-              <item name="oc-daphp-p6" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="Form" type="462c0819:PsiDirectoryNode" />
-              <item name="Model" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="oc-daphp-p6" type="b2602c69:ProjectViewProjectNode" />
-              <item name="oc-daphp-p6" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="Form" type="462c0819:PsiDirectoryNode" />
-              <item name="Model" type="462c0819:PsiDirectoryNode" />
-              <item name="Security" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="oc-daphp-p6" type="b2602c69:ProjectViewProjectNode" />
-              <item name="oc-daphp-p6" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="Form" type="462c0819:PsiDirectoryNode" />
-              <item name="Type" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="oc-daphp-p6" type="b2602c69:ProjectViewProjectNode" />
-              <item name="oc-daphp-p6" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="Form" type="462c0819:PsiDirectoryNode" />
-              <item name="Type" type="462c0819:PsiDirectoryNode" />
-              <item name="Trick" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="oc-daphp-p6" type="b2602c69:ProjectViewProjectNode" />
-              <item name="oc-daphp-p6" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="Manager" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -546,29 +429,28 @@
       <workItem from="1543930418748" duration="28449000" />
       <workItem from="1544010184121" duration="23232000" />
       <workItem from="1544049062408" duration="72000" />
-      <workItem from="1544095353000" duration="3150000" />
+      <workItem from="1544095353000" duration="6766000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="118964000" />
+    <option name="totallyTimeSpent" value="122580000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-1" y="0" width="1922" height="1053" extended-state="6" />
-    <editor active="true" />
+    <frame x="0" y="0" width="1807" height="1043" extended-state="0" />
     <layout>
       <window_info anchor="bottom" id="TODO" order="11" />
       <window_info anchor="bottom" id="Event Log" order="2" side_tool="true" weight="0.32990867" />
       <window_info anchor="bottom" id="Database Changes" order="1" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="4" />
       <window_info anchor="bottom" id="Run" order="7" />
-      <window_info anchor="bottom" id="Terminal" order="3" weight="0.31392694" />
+      <window_info anchor="bottom" id="Terminal" order="3" visible="true" weight="0.21939954" />
       <window_info anchor="right" id="Remote Host" order="1" />
-      <window_info active="true" content_ui="combo" id="Project" order="1" sideWeight="0.4977169" visible="true" weight="0.1772973" />
+      <window_info active="true" content_ui="combo" id="Project" order="1" sideWeight="0.49750414" visible="true" weight="0.18904899" />
       <window_info anchor="bottom" id="Docker" order="0" show_stripe_button="false" />
       <window_info anchor="right" id="Database" order="0" weight="0.12486486" />
       <window_info id="Structure" order="2" sideWeight="0.5022831" side_tool="true" weight="0.23567568" />
-      <window_info id="Favorites" order="0" side_tool="true" />
+      <window_info id="Favorites" order="0" sideWeight="0.5024958" side_tool="true" weight="0.1772973" />
       <window_info anchor="bottom" id="Debug" order="8" weight="0.4" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="10" weight="0.4" />
@@ -941,7 +823,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Controller/DefaultController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="555">
+        <state relative-caret-position="463">
           <caret line="42" column="5" selection-start-line="42" selection-start-column="5" selection-end-line="42" selection-end-column="5" />
         </state>
       </provider>
