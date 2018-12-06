@@ -17,6 +17,7 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
 class TrickController extends AbstractController
 {
     /**
+     * checking form completion, then leading to homepage. If not, load empty form.
      * @Route("/add", name="trick_add")
      */
     public function add(TrickHandler $trickHandler)
@@ -32,6 +33,7 @@ class TrickController extends AbstractController
 
 
     /**
+     * checking form completion, then leading to homepage. If not, load form for editing.
      * @Route("/{slug}/update", name="trick_update")
      */
     public function update(TrickHandler $trickHandler, Trick $trick)

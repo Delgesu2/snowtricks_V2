@@ -8,6 +8,7 @@ use Doctrine\ORM\Event\LifecycleEventArgs;
 
 /**
  * Class SlugUserNameListener
+ * Creating user name slug from name
  * @package App\EntityListener
  */
 class SlugUserNameListener

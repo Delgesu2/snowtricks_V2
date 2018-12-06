@@ -9,7 +9,7 @@ use Doctrine\ORM\UnitOfWork;
  * Class TrickHandler
  * @package App\Form\Handler
  */
-class TrickHandler extends AbstractHandler
+final class TrickHandler extends AbstractHandler
 {
     /**
      * @var EntityManagerInterface

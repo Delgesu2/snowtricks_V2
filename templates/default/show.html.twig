@@ -3,7 +3,7 @@
 
 {% block body %}
     <h1>{{ trick.name }}</h1>
-    <p><img src="{{ asset('uploads/' ~ trick.mainImage.path) }}" alt="{{ trick.name }}" /></p>
+    <p><img src="{{ asset('uploads/' ~ trick.mainImage) }}" alt="{{ trick.name }}" /></p>
     {{ trick.description|raw }}
 
     <ul>

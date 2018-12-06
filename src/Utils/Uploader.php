@@ -6,6 +6,7 @@ use Symfony\Component\HttpFoundation\File\UploadedFile;
 
 /**
  * Class Uploader
+ * Create new file name and upload this file.
  * @package App\Utils
  */
 class Uploader

@@ -4,7 +4,7 @@ App\Entity\Image:
 
 App\Entity\Video:
     video_{1..40}:
-        path: 'http://www.youtube.com'
+        path: 'https://www.youtube.com/embed/PePNEXh_1N4'
 
 App\Entity\Category:
     category:

@@ -1,8 +1,70 @@
 {% extends 'base.html.twig' %}
 
+{% block title %}Snowtricks - Connexion{% endblock %}
+
 {% block body %}
+
     {% if error is not null %}
         {{ error.message }}
     {% endif %}
-    {{ form(form) }}
+
+    {% block form %}
+    {{ form_start(form) }}
+
+    <div class="columns is-mobile">
+        <div class="column is-10 is-offset-1">
+
+            <div class="hero is-info">
+                <div class="hero-body">
+                    <div class="container has-text-centered">
+                        <h1 class="title">
+                            Connexion
+                        </h1>
+                    </div>
+                </div>
+            </div>
+
+            <section>  <!-- Name -->
+                <div class="field is-horizontal">
+                    <div class="field-label is-normal">
+                        {{ form_label(form._email, 'Courriel') }}
+                    </div>
+                    <div class="field-body">
+                        <div class="field">
+                            <div class="control">
+                                {{ form_widget(form._email, {'attr': {'class': 'input'}}) }}
+                                {{ form_errors(form._email) }}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Password -->
+                <div class="field is-horizontal">
+                    <div class="field-label is-normal">
+                        {{ form_label(form._password, 'Mot de passe')  }}
+                    </div>
+                    <div class="field-body">
+                        <div class="field">
+                            <div class="control">
+                                {{ form_widget(form._password, {'attr': {'class': 'input'}}) }}
+                            </div>
+
+                            <!-- Password forget -->
+                            <div><a href="/security/forget">Mot de passe oublié ? Cliquer sur ce lien.</a></div>
+
+                        </div>
+                    </div>
+                </div>
+
+            </section>
+
+            {{ form_widget(form.submit, {'attr': {'class': 'button is-warning'}, 'label': 'Envoyer'}) }}
+
+        </div>
+    </div>
+
+    {{ form_end(form) }}
+        {% endblock %}
+
 {% endblock %}

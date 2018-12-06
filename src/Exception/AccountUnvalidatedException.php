@@ -6,6 +6,7 @@ use Symfony\Component\Security\Core\Exception\AuthenticationException;
 
 /**
  * Class AccountUnvalidatedException
+ * Failure message if account unvalidated
  * @package App\Exception
  */
 class AccountUnvalidatedException extends AuthenticationException

@@ -6,6 +6,7 @@ use Twig\Environment;
 
 /**
  * Class Mailer
+ * using SwiftMailer, transport and message.
  * @package App\Utils
  */
 class Mailer

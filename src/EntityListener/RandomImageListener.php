@@ -9,6 +9,7 @@ use Doctrine\ORM\Event\LifecycleEventArgs;
 
 /**
  * Class RandomImageListener
+ * Randomly select an image as main trick image for each page loading
  * @package App\EntityListener
  */
 class RandomImageListener

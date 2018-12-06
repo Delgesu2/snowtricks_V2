@@ -4,6 +4,7 @@ namespace App\Entity\Traits;
 
 /**
  * Trait ValidationTrait
+ * Validation token and date
  * @package App\Entity\Traits
  */
 trait ValidationTrait

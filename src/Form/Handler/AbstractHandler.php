@@ -8,6 +8,7 @@ use Symfony\Component\HttpFoundation\RequestStack;
 
 /**
  * Class AbstractHandler
+ * Basic form handler. Should be used for any other handler.
  * @package App\Form\Handler
  */
 abstract class AbstractHandler implements HandlerInterface
@@ -32,8 +33,10 @@ abstract class AbstractHandler implements HandlerInterface
      */
     protected $data;
 
+
     /**
      * @Required
+     *
      * @param FormFactoryInterface $formFactory
      */
     public function setFormFactory(FormFactoryInterface $formFactory): void
@@ -43,6 +46,7 @@ abstract class AbstractHandler implements HandlerInterface
 
     /**
      * @Required
+     *
      * @param RequestStack $requestStack
      */
     public function setRequestStack(RequestStack $requestStack): void
@@ -63,7 +67,9 @@ abstract class AbstractHandler implements HandlerInterface
 
     /**
      * Handle form
+     *
      * @param $data
+     *
      * @return bool
      */
     public function handle($data): bool

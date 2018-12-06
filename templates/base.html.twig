@@ -1,19 +1,137 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="UTF-8">
-        <title>{% block title %}Welcome!{% endblock %}</title>
-        {% block stylesheets %}{% endblock %}
-    </head>
-    <body>
-        <ul style="display: flex; justify-content: space-between; list-style:none; width: 100%; background:rgba(0,0,0,0.5); color: #fff; margin: 0; padding: 10px;">
-            {% if is_granted("ROLE_USER") %}
-                <li><a href="{{ path("trick_add") }}">Ajouter</a></li>
-            {% endif %}
-        </ul>
-        {% block body %}{% endblock %}
-        {% block javascripts %}
-            <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
-        {% endblock %}
-    </body>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{% block title %}{% endblock %}</title>
+    {% block stylesheets %}
+        <link href="{{ asset('https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.0/css/bulma.min.css') }}" rel="stylesheet">
+        <link href="{{ asset('/css/bulma.min.css') }}" rel="stylesheet">
+        <link href="{{ asset('/css/style.css') }}" rel="stylesheet">
+    {% endblock %}
+</head>
+<body>
+
+<!-- Navbar -->
+<!-- desktop display -->
+<div class="columns is-mobile is-hidden-mobile">
+    <div class="column is-3 is-offset-1">
+        <a href="/"><img src="/appImages/snowtricks.png" alt="logo Snowtricks" title="snowtricks"></a>
+    </div>
+    <div class="column is-6">
+        <div class="tabs is-right ">
+            <ul>
+
+                {% if is_granted('IS_AUTHENTICATED_FULLY') %}
+
+                    <li> {{ app.user.userName }} connecté</li>
+
+                {% endif %}
+
+
+                <li {% if app.request.get('_route') == 'index' %} class="is-active" {% endif %}>
+                    <a href="/">Accueil</a>
+                </li>
+                <li {% if app.request.get('_route') == 'list' %} class="is-active" {% endif %}>
+                    <a href="/list">Tricks</a>
+                </li>
+                <li {% if app.request.get('_route') == 'trick_add' %} class="is-active" {% endif %}>
+                    <a href="/tricks/add">Nouveau</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="column is-2">
+        <div class="dropdown is-hoverable">
+            <div class="dropdown-trigger">
+                <button class="button" aria-haspopup="true" aria-controls="dropdown-menu2">
+                    <span>Compte</span>
+                    <span class="icon is-small">
+                                <i class="fas fa-angle-down" aria-hidden="true"></i>
+                            </span>
+                </button>
+            </div>
+            <div class="dropdown-menu" id="dropdown-menu2" role="menu">
+                <div class="dropdown-content">
+
+                    {% if not is_granted('ROLE_USER', 'ROLE_ADMIN') %}
+
+                        <a href="/register" class="dropdown-item">
+                            Inscription
+                        </a>
+
+                        <a href="/login" class="dropdown-item">
+                            Connexion
+                        </a>
+
+                    {% endif %}
+
+                    {% if is_granted('ROLE_USER') %}
+
+                        <a href="/userupdate" class="dropdown-item">
+                            Editer profile
+                        </a>
+
+                    {% endif %}
+
+                    {% if is_granted('ROLE_ADMIN') %}
+
+                        <a href="/userlist" class="dropdown-item redfont">
+                            Liste inscrits
+                        </a>
+
+                    {% endif %}
+
+                    {% if is_granted('ROLE_USER', 'ROLE_ADMIN') %}
+
+                        <a href="/logout" class="dropdown-item">
+                            Déconnexion
+                        </a>
+
+                    {% endif %}
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- mobile phone -->
+<div class="columns is-hidden-tablet">
+    <nav class="navbar is-fixed-bottom" role="navigation" aria-label="main navigation">
+        <div class="tabs is-fullwidth is-boxed">
+            <ul>
+                <li><a href="/">
+                                <span class="icon">
+                                    <i class="fas fa-home" aria-hidden="true"></i>
+                                </span>
+                    </a>
+                </li>
+                <li><a href="/list">
+                                <span class="icon">
+                                    <i class="fas fa-bookmark" aria-hidden="true"></i>
+                                </span>
+                    </a>
+                </li>
+                <li><a href="#">
+                                <span class="icon">
+                                    <i class="fas fa-sign-in-alt" aria-hidden="true"></i>
+                                </span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+</div>
+<!-- end Navbar -->
+
+{% for success in app.flashes('success') %}
+    {{ success }}
+{% endfor %}
+
+{% block body %}{% endblock %}
+{% block javascripts %}
+    <script defer src="https://use.fontawesome.com/releases/v5.0.7/js/all.js"></script>
+{% endblock %}
+</body>
 </html>

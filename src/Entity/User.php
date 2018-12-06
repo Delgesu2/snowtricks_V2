@@ -29,14 +29,6 @@ class User implements UserInterface
     }
 
     /**
-     * User constructor.
-     */
-    public function __construct()
-    {
-        $this->__profileConstruct();
-    }
-
-    /**
      * @var int |null
      * @ORM\Id()
      * @ORM\GeneratedValue()
@@ -55,6 +47,14 @@ class User implements UserInterface
      * @ORM\Column(type="string")
      */
     private $role;
+
+    /**
+     * User constructor.
+     */
+    public function __construct()
+    {
+        $this->__profileConstruct();
+    }
 
     /**
      * @return int|null

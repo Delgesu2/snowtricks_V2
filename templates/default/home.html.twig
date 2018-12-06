@@ -1,0 +1,113 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Snowtricks - Accueil{% endblock %}
+
+{%  block body %}
+
+    <figure class="image is-2by1">
+        <img src="/appImages/cover_snow.jpg" alt="snowboard jump photo" title="Snowboard jump">
+    </figure>
+
+    <span class="icon" id="scrollDown">
+        <a href="#container"> <i class="fas fa-3x fa-arrow-circle-down"></i> </a>
+    </span>
+
+    <section class="hero">
+        <div class="hero-body">
+            <div class="container has-text-centered">
+                <h1 class="title">
+                    Neige
+                    Passion
+                    Partage
+                </h1>
+                <h2 class="subtitle">
+                    Rejoins la plus grande communauté d'adeptes du snowboard !
+                </h2>
+                <span class="icon">
+                            <i class="far fa-snowflake" aria-hidden="true"></i>
+                </span>
+                <span class="icon">
+                            <i class="far fa-snowflake" aria-hidden="true"></i>
+                </span>
+                <span class="icon">
+                            <i class="far fa-snowflake" aria-hidden="true"></i>
+                </span>
+            </div>
+        </div>
+    </section>
+
+    <section id="container">
+
+        {%  for row in tricks|batch(6) %}
+
+        <div class="tile is-ancestor" id="row">
+
+            {% for trick in row %}
+
+                <div class="tile is-parent is-2">
+                    <div class="tile is-child box">
+                        <a href="{{ path('show', {'slug':trick.slug}) }}">
+                            {%  set image = trick.mainImage %}
+                        <figure class="image is-3by2">
+                           <img src="{{ asset('uploads/' ~ trick.mainImage ?? '') }}" alt="{{ trick.name ?? '' }}">
+                        </figure>
+
+                        <p>{{ trick.name|capitalize}}</p>
+                        </a>
+
+                        {% if is_granted('ROLE_USER') %}
+
+                        <a href="{{ path('update_trick', {'slug':trick.slug}) }}">
+                                <span class="icon">
+                                    <i class="fas fa-pencil-alt" aria-hidden="true"></i>
+                                </span>
+                        </a>
+                        <a href="{{ path('delete_trick', {'slug':trick.slug}) }}">
+                                <span class="icon">
+                                    <i class="fas fa-trash" aria-hidden="true"></i>
+                                </span>
+                        </a>
+
+                        {% endif %}
+
+                    </div>
+                </div>
+
+            {% endfor %}
+
+        </div>
+
+        {% else %}
+
+            <container class="hero">
+                <div class="hero-body">
+                    <div class="container has-text-centered">
+                        <h1 class="title">
+                            Pas de trick
+                        </h1>
+                    </div>
+                </div>
+            </container>
+
+        {% endfor %}
+
+        <span class="icon is-hidden-mobile" id="scrollUp">
+            <a href="#container"> <i class="fas fa-3x fa-arrow-circle-up"></i> </a>
+        </span>
+
+    </section>
+
+        <div class="columns is-mobile">
+            <div class="column is-2 is-offset-half">
+                <button class="button" id="load-more-tricks">
+                    Charger plus
+                </button>
+            </div>
+        </div>
+
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+    <script defer src="{{ asset('/js/homepage.js') }}"></script>
+{% endblock %}

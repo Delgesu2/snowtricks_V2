@@ -8,6 +8,7 @@ use Doctrine\ORM\EntityManagerInterface;
 
 /**
  * Class UserManager
+ * Managing user through EntityManagerInterface
  * @package App\Manager
  */
 class UserManager implements UserManagerInterface

@@ -6,6 +6,7 @@ use Doctrine\Common\Collections\Collection;
 
 /**
  * Trait ProfileTrait
+ * Registered user full entity trait
  * @package App\Entity\Traits
  */
 trait ProfileTrait

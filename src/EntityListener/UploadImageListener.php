@@ -8,6 +8,7 @@ use Doctrine\ORM\Event\LifecycleEventArgs;
 
 /**
  * Class UploadImageListener
+ * Image uploader helper listener
  * @package App\EntityListener
  */
 class UploadImageListener

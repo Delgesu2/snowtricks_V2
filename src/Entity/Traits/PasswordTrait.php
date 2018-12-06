@@ -4,6 +4,7 @@ namespace App\Entity\Traits;
 
 /**
  * Trait PasswordTrait
+ * Full password entity (getters and setters) trait
  * @package App\Entity\Traits
  */
 trait PasswordTrait

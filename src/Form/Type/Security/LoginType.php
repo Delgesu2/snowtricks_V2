@@ -12,6 +12,7 @@ use Symfony\Component\OptionsResolver\OptionsResolver;
 
 /**
  * Class LoginType
+ *
  * @package App\Form\Type\Security
  */
 class LoginType extends AbstractType
@@ -22,15 +23,9 @@ class LoginType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('_username', EmailType::class, [
-                "label" => "Votre adresse email :"
-            ])
-            ->add("_password", PasswordType::class, [
-                "label" => "Votre mot de passe :"
-            ])
-            ->add("submit", SubmitType::class, [
-                "label" => "Se connecter"
-            ])
+            ->add('_email', EmailType::class)
+            ->add('_password', PasswordType::class)
+            ->add('submit', SubmitType::class)
         ;
     }
 

@@ -8,6 +8,7 @@ use Symfony\Component\Security\Core\Authentication\Token\Storage\TokenStorageInt
 
 /**
  * Class CommentTrickListener
+ * Create new comment with TokenStorageInterface for author's name and DateTimeImmutable for date
  * @package App\EntityListener
  */
 class CommentTrickListener

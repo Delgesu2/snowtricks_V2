@@ -9,6 +9,7 @@ use Doctrine\ORM\Event\LifecycleEventArgs;
 
 /**
  * Class SlugTrickNameListener
+ * Creating trick's slug from name
  * @package App\EntityListener
  */
 class SlugTrickNameListener

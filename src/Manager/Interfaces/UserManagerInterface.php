@@ -11,6 +11,7 @@ interface UserManagerInterface
 {
     /**
      * @param User $user
+     * persist user validation
      */
     public function validate(User $user): void;
 }

@@ -241,6 +241,7 @@ class Trick
     }
 
     /**
+     * Get random image in ArrayCollection directly in database thanks to Doctrine's Criteria
      * @return Image
      */
     public function getRandomImage(): Image

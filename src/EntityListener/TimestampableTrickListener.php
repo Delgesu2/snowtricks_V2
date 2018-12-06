@@ -10,6 +10,7 @@ use Symfony\Component\Security\Core\Authentication\Token\Storage\TokenStorageInt
 
 /**
  * Class TimestampableTrickListener
+ * Set trick creation time
  * @package App\EntityListener
  */
 class TimestampableTrickListener

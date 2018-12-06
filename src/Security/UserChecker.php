@@ -8,6 +8,7 @@ use Symfony\Component\Security\Core\User\UserInterface;
 
 /**
  * Class UserChecker
+ * Check the account status using UserInterface before authentication.
  * @package App\Security
  */
 class UserChecker implements UserCheckerInterface
@@ -18,7 +19,7 @@ class UserChecker implements UserCheckerInterface
     public function checkPreAuth(UserInterface $user)
     {
         if($user->getValidatedAt() === null) {
-            throw new AccountUnvalidatedException("Votre compte n'a pas été activé par un adminisrateur.");
+            throw new AccountUnvalidatedException("Votre compte n'a pas été activé par un administrateur.");
         }
     }
 

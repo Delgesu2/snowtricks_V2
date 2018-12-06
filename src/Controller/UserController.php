@@ -11,6 +11,7 @@ use Symfony\Component\Routing\Annotation\Route;
 
 /**
  * Class UserController
+ * Validate sign up
  * @package App\Controller
  * @Route("/user")
  */

@@ -1,0 +1,197 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Snowtricks - Figure{% endblock %}
+
+{%  block body %}
+
+    <div class="columns is-mobile">
+        <div class="column is-10 is-offset-1">
+
+            <!-- Trick name, front image and icons -->
+            <section>
+                <div class="hero is-info">
+                    <div class="hero-body">
+                        <div class="container has-text-centered">
+                            <h1 class="title">
+                                {{ trick.name|capitalize }}
+                            </h1>
+                        </div>
+                    </div>
+                </div>
+
+                {% if is_granted('ROLE_USER', 'ROLE_ADMIN') %}
+
+                <div class="container has-text-right">
+                    <a href="{{ path('update_trick', {'slug':oneTrick.slug}) }}">
+                                        <span class="icon">
+                                            <i class="fas fa-pencil-alt" aria-hidden="true"></i>
+                                        </span>
+                    </a>
+                    <a href="{{ path('delete_trick', {'slug':oneTrick.slug}) }}">
+                                        <span class="icon">
+                                            <i class="fas fa-trash" aria-hidden="true"></i>
+                                        </span>
+                    </a>
+                </div>
+
+                {% endif %}
+
+                {%  set image = trick.mainImage %}
+                <figure class="image is-5by3">
+                <img src="{{ asset('uploads/' ~ image ?? '') }}" alt="{{ trick.name ?? '' }}">
+                </figure>
+            </section>
+            <!-- End trick name, image and icons -->
+
+            <!-- Photos and videos -->
+            <section id="medias">
+                <!-- Responsive "See medias" button -->
+                <div class="button is-info is-hidden-tablet is-flex-mobile" id="show-medias">Voir médias</div>
+
+                <div class="columns is-hidden-mobile">
+
+                    <div class="column is-6"> <!-- Photos -->
+                        {% for row in trick.images|batch(3) %}
+                            <div class="tile is-ancestor">
+                                {% for photo in row %}
+                                    <div class="tile is-parent is-4">
+                                        <div class="tile is-child box">
+                                            <figure class="image is-3by2">
+                                                <img src="{{ asset('uploads/' ~ image ?? '') }}" alt="{{ trick.name ?? '' }}"
+                                                     class='img-zoomable'>
+                                            </figure>
+                                        </div>
+                                    </div>
+                                {% endfor %}
+                            </div>
+                        {% endfor %}
+                    </div>
+
+                    <div class="column is-6"> <!-- Videos -->
+                        {% for row in trick.videos|batch(3) %}
+                            <div class="tile is-ancestor">
+                                {% for video in row %}
+                                    <div class="tile is-parent is-4">
+                                        <div class="tile is-child box">
+                                            <iframe width="150" height="100" src="{{ video.path ?? '' }}" frameborder="0"
+                                                    allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                                        </div>
+                                    </div>
+                                {% endfor %}
+                            </div>
+                        {% endfor %}
+                    </div>
+
+                </div>
+            </section>
+            <!-- End photos and videos -->
+
+            <!-- Description and tags -->
+            <section>
+                <div class="container">
+               {{ trick.description }}
+                </div>
+                <div class="field is-grouped is-grouped-multiline">
+                    <div class="control">
+                        <div class="tags has-addons">
+                            <span class="tag is-dark">Groupe:</span>
+                            <span class="tag is-warning">{{ trick.category.name }}</span>
+                        </div>
+                    </div>
+
+                    {%  if trick.createdAt is not null %}
+                    <div class="control">
+                        <div class="tags has-addons">
+                            <span class="tag is-dark">Date de création:</span>
+                            <span class="tag is-info">{{ trick.createdAt|date("d/m/y à H\\hi\\m\\i\\n")}}</span>
+                        </div>
+                    </div>
+                    {% endif %}
+
+                    {% if trick.updatedAt is not null %}
+                    <div class="control">
+                        <div class="tags has-addons">
+                            <span class="tag is-dark">Date de modification:</span>
+                            <span class="tag is-info">{{ oneTrick.dateupdate|date("d/m/y H\\hi\\m\\i\\n") }}</span>
+                        </div>
+                    </div>
+                    {% endif %}
+
+                </div>
+            </section>
+            <!-- End description -->
+
+            <!-- Comments -->
+            <section class="hero is-info">
+                <div class="hero-body">
+                    <div class="container">
+                        <h1 class="title">
+                            Espace de discussion
+                        </h1>
+                        <h2 class="subtitle">
+                            Connecte-toi ou inscris-toi pour laisser un commentaire.
+                        </h2>
+                    </div>
+                </div>
+            </section>
+
+
+            {% for comment in trick.comments %}
+
+            <article class="media">
+
+                <figure class="media-left">
+                    <p class="image is-64x64">
+                        {% if comment.author.avatar is defined %}
+                            <img src="{{ asset('uploads/' ~ comment.author.avatar ?? '') }}">
+                        {% else %}
+                            <img src="{{ asset('/appImages/PersonPlaceholder.png') }}">
+                        {% endif %}
+                    </p>
+                </figure>
+                <div class="media-content">
+                    <div class="content">
+                        <p>
+                            <strong>{{ comment.author.userName }}</strong>
+                            <br>
+                            {{ comment.content }}
+                            <br>
+                            <span class="tag is-light">{{ comment.createdAt|date("\\L\\e d/m/y à H\\hi\\m\\i\\n") }}</span>
+                        </p>
+                    </div>
+                </div>
+
+                    {% if is_granted('ROLE_ADMIN') %}
+
+                        <a href="{{ path('delete_comment', {'slug':comment.slug, 'trick':comment.trick.slug }) }}">
+                        <span class="icon">
+                            <i class="fas fa-trash redfont" aria-hidden="true"></i>
+                        </span>
+                        </a>
+
+                    {% endif %}
+
+            </article>
+
+            {% endfor %}
+
+            {% if is_granted('ROLE_USER', 'ROLE_ADMIN') %}
+
+                {% form_theme form 'theme/commentForm.html.twig' %}
+                {{ form(form) }}
+
+            {% endif %}
+
+        </div>
+    </div>
+
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+    <script src="https://unpkg.com/zooming/build/zooming.min.js">
+    </script>
+    <script>
+        new Zooming().listen('.img-zoomable')
+    </script>
+{% endblock %}

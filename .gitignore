@@ -5,6 +5,9 @@
 /public/bundles/
 /var/
 /vendor/
+/public/appImages/
+/public/css/bulma.min.css/
+/public/uploads/
 ###< symfony/framework-bundle ###
 
 ###> symfony/phpunit-bridge ###
@@ -15,3 +18,4 @@
 ###> symfony/web-server-bundle ###
 /.web-server-pid
 ###< symfony/web-server-bundle ###
+

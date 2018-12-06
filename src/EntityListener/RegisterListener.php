@@ -8,6 +8,7 @@ use Doctrine\ORM\Event\LifecycleEventArgs;
 
 /**
  * Class RegisterListener
+ * Create token before persisting user and sending confirmation mail
  * @package App\EntityListener
  */
 class RegisterListener

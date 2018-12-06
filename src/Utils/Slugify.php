@@ -4,6 +4,7 @@ namespace App\Utils;
 
 /**
  * Class Slugify
+ * Transforming a name into a slug. Very usefull to pass as parameter during request.
  * @package App\Utils
  */
 class Slugify

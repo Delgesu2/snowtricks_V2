@@ -21,6 +21,8 @@ use Symfony\Component\Security\Guard\AbstractGuardAuthenticator;
 
 /**
  * Class UserAuthenticator
+ * Construct form and checking full logic for user authentication:
+ * getting and checking credentials, success and failure messages.
  * @package App\Security\Authenticator
  */
 class UserAuthenticator extends AbstractGuardAuthenticator
