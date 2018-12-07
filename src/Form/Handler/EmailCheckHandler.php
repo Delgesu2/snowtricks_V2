@@ -28,7 +28,7 @@ class EmailCheckHandler extends AbstractHandler
      *
      * @param UserRepository $repository
      * @param FormInterface $form
-     */
+
     public function __construct(
         UserRepository $repository,
         FormInterface  $form
@@ -36,7 +36,7 @@ class EmailCheckHandler extends AbstractHandler
     {
         $this->repository = $repository;
         $this->form       = $form;
-    }
+    }  **/
 
 
     public function onSuccess(): void

@@ -5,7 +5,9 @@ namespace App\Controller;
 use App\Entity\User;
 use App\Form\Handler\EmailCheckHandler;
 use App\Form\Model\Security\Login;
+use App\Form\Type\Security\EmailCheckType;
 use App\Form\Type\Security\LoginType;
+use App\Form\Type\Security\RegisterType;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Annotation\Route;
@@ -23,6 +25,8 @@ class SecurityController extends AbstractController
 {
     /**
      * @Route("/login", name="security_login")
+     *
+     * Methods render() and createForm() from ControllerTrait used in AbstractController
      */
     public function login(AuthenticationUtils $authenticationUtils)
     {
@@ -48,7 +52,7 @@ class SecurityController extends AbstractController
         Request $request
     )
     {
-        if ($checkHandler->handle($user)) {
+        /**if ($checkHandler->handle($user)) {
 
             $request->getSession()->getFlashBag()->add('Success', "Adresse vérifiée.
             Vérifiez votre boîte mail. Un courriel avec un lien de réinitialisation du mot de passe
@@ -56,12 +60,22 @@ class SecurityController extends AbstractController
 
             return $this->redirectToRoute('index');
 
-            }
+            } **/
 
-        return $this->render("security/email_check.html.twig", [
-            "form" => $checkHandler->getView()
+        return $this->render('security/email_check.html.twig', [
+            'form' => $this->createForm(EmailCheckType::class)->createView()
         ]);
 
+    }
+
+    /**
+     * @Route("/register", name="register")
+     */
+    public function register()
+    {
+        return $this->render('security/register.html.twig', [
+            'form' => $this->createForm(RegisterType::class)->createView()
+        ]);
     }
 
 }

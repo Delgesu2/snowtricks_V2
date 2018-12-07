@@ -24,16 +24,19 @@
                 </div>
             </div>
 
-            <section>  <!-- Name -->
+            <div class="section column is-6">  <!-- Name -->
+
                 <div class="field is-horizontal">
+
                     <div class="field-label is-normal">
-                        {{ form_label(form._email, 'Courriel') }}
+                        {{ form_label(form._username, 'Nom') }}
                     </div>
+
                     <div class="field-body">
                         <div class="field">
                             <div class="control">
-                                {{ form_widget(form._email, {'attr': {'class': 'input'}}) }}
-                                {{ form_errors(form._email) }}
+                                {{ form_widget(form._username, {'attr': {'class': 'input'}}) }}
+                                {{ form_errors(form._username) }}
                             </div>
                         </div>
                     </div>
@@ -57,7 +60,7 @@
                     </div>
                 </div>
 
-            </section>
+            </div>
 
             {{ form_widget(form.submit, {'attr': {'class': 'button is-warning'}, 'label': 'Envoyer'}) }}
 

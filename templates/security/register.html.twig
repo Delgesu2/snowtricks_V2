@@ -1,0 +1,102 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Snowtricks - Inscription nouvel utilisateur{% endblock %}
+
+{% block body %}
+
+    {% block form %}
+        {{ form_start(form) }}
+
+        <div class="columns is-mobile">
+            <div class="column is-10 is-offset-1">
+
+                <div class="hero is-info">
+                    <div class="hero-body">
+                        <div class="container has-text-centered">
+                            <h1 class="title">
+                                Inscription
+                            </h1>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <section class="section column is-6">
+
+            <!-- Name -->
+            <div class="field is-horizontal">
+                <div class="field-label is-normal">
+                    {{ form_label(form._username, 'Nom') }}
+                </div>
+                <div class="field-body">
+                    <div class="field">
+                        <div class="control">
+                            {{ form_widget(form._username, {'attr': {'class': 'input'}}) }}
+                            {{ form_errors(form._username) }}
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- E-mail -->
+            <div class="field is-horizontal">
+                <div class="field-label is-normal">
+                    {{ form_label(form._email, 'Courriel') }}
+                </div>
+                <div class="field-body">
+                    <div class="field">
+                        <div class="control">
+                            {{ form_widget(form._email, {'attr': {'class': 'input'}}) }}
+                            {{ form_errors(form._email) }}
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Password -->
+            <div class="field is-horizontal">
+                <div class="field-label is-normal">
+                    {{ form_label(form._password, 'Mot de passe')  }}
+                </div>
+                <div class="field-body">
+                    <div class="field">
+                        <div class="control">
+                            {{ form_widget(form._password, {'attr': {'class': 'input'}}) }}
+                            {{ form_errors(form._password) }}
+                        </div>
+                        <p class="help is-warning">Le mot de passe doit se composer d'au moins 8 caractères, dont
+                            au minimum 1 lettre majuscule, 1 chiffre, et ne comporter aucun espace.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Load profile picture -->
+            <div class="field is-horizontal">
+                <div class="field-label is-normal">
+                    {{ form_label(form._avatar, 'Photo') }}
+                </div>
+                <div class="field-body">
+                    <div class="control">
+                        <div class="file">
+                            <label class="file-label" oninput="showFile()">
+
+                                    {{ form_widget(form._avatar) }}
+                                    {{ form_errors(form._avatar) }}
+
+                            </label>
+                            <output id="loadedFile"></output>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            {{ form_widget(form.submit, {'attr': {'class': 'button is-warning'}, 'label': 'Envoyer'}) }}
+
+        </section>
+
+        {{ form_end(form) }}
+    {% endblock %}
+
+{% endblock %}

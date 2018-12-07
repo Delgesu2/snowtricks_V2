@@ -4,10 +4,6 @@
 
 {% block body %}
 
-    {% if error is not null %}
-        {{ error.message }}
-    {% endif %}
-
     {% block form %}
     {{ form_start(form) }}
 
@@ -30,7 +26,7 @@
                 d'un nouveau mot de passe.
             </div>
 
-            <div class="section">
+            <div class="section column is-6">
 
                 <div class="field is-horizontal">
 
@@ -41,18 +37,18 @@
                     <div class="field-body">
                         <div class="field">
                             <div class="control">
-                                {{ form_widget(form.email) }}
+                                {{ form_widget(form.email, {'attr': {'class': 'input'}}) }}
                                 {{ form_errors(form.email) }}
                             </div>
                         </div>
                     </div>
 
-                    <div class="field">
-                        <div class="control">   <!-- Submit -->
-                            {{ form_widget(form.submit, {'attr': {'class': 'button is-warning'}, 'label': 'Envoyer'}) }}
-                        </div>
-                    </div>
+                </div>
 
+                <div class="field">
+                    <div class="control">   <!-- Submit -->
+                        {{ form_widget(form.submit, {'attr': {'class': 'button is-warning'}, 'label': 'Envoyer'}) }}
+                    </div>
                 </div>
 
             </div>

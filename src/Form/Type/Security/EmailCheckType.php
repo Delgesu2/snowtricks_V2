@@ -18,8 +18,11 @@ use Symfony\Component\Form\FormBuilderInterface;
  *
  * @package App\Form\Type\Security
  */
-class EmailCheckType extends AbstractType
+final class EmailCheckType extends AbstractType
 {
+    /**
+     * {@inheritdoc}
+     */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder

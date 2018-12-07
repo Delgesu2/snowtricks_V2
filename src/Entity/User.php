@@ -54,6 +54,7 @@ class User implements UserInterface
     public function __construct()
     {
         $this->__profileConstruct();
+        $this->setRole('ROLE_USER');
     }
 
     /**
