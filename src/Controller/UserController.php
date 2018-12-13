@@ -28,4 +28,16 @@ class UserController extends AbstractController
 
         return $this->redirectToRoute("security_login");
     }
+
+    /**
+     * @Route("/password_reset/{token}", name="password_reset")
+     * @ParamConverter("user", options={"mapping": {"token": "validationToken"}})
+     * @IsGranted("IS_AUTHENTICATED_ANONYMOUSLY")
+     */
+    public function passwordReset()
+    {
+
+    }
+
+
 }

@@ -1,6 +1,5 @@
 {% extends 'email.html.twig' %}
 
-
 {% block body %}
     <a href="{{ absolute_url(path("user_validate", { token: user.validationToken })) }}">Valider mon inscription</a>
 {% endblock %}

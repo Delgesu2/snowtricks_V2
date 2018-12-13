@@ -12,7 +12,7 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
  * Class TrickController
  * @package App\Controller
  * @Route("/tricks")
- * @IsGranted("ROLE_USER")
+ *
  */
 class TrickController extends AbstractController
 {

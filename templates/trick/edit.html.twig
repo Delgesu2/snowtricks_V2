@@ -1,38 +1,160 @@
 {% extends 'base.html.twig' %}
 
+{% block title %}Snowtricks - Création d'un trick{% endblock %}
+
 
 {% block body %}
+
+    <div class="columns is-mobile">
+        <div class="column is-10 is-offset-1">
+
+            <div class="hero is-info">
+                <div class="hero-body">
+                    <div class="container has-text-centered">
+                        <h1 class="title">
+                            Ajoute ton trick à la liste
+                        </h1>
+                    </div>
+                </div>
+            </div>
+
+
     {{ form_start(form) }}
+
+        <section class="section">
+
+            <!-- Trick name -->
+            <div class="field is-horizontal">
+                <div class="field-label is-normal">
+                {{ form_label(form.name, 'Nom de la figure') }}
+                </div>
+                <div class="field-body">
+                    <div class="field">
+                        <div class="control">
+                            {{ form_widget(form.name) }}
+                            {{ form_errors(form.name) }}
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+                <!-- Trick description -->
+            <div class="field is-horizontal">
+                <div class="field-label is-normal">
+                    {{ form_label(form.description, 'Description') }}
+                </div>
+                <div class="field-body">
+                    <div class="field">
+                        <div class="control">
+                             {{ form_widget(form.description, {'attr': {'placeholder': 'Détaille la figure'} }) }}
+                             {{ form_errors(form.description) }}
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Trick category -->
+            <div class="field is-horizontal">
+                <div class="field-label is-normal">
+                    {{ form_label(form.category, 'Groupe') }}
+                </div>
+                <div class="field-body">
+                    <div class="field is-narrow">
+                        <div class="control">
+                            <div class="select is-fullwidth">
+                                {{ form_widget(form.category) }}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+
         {{ form_errors(form) }}
         {{ form_widget(form._token) }}
-        {{ form_row(form.name) }}
-        {{ form_row(form.description) }}
-        {{ form_row(form.category) }}
 
-        <a href="#" data-rel="#videos" class="btn-add">Ajouter une vidéo</a>
-        <div
-                id="videos"
-                data-index="{{ form.videos|length > 0 ? form.videos|last.vars.name+1 : 0 }}"
-                data-prototype="{{ include("trick/prototypes/video.html.twig", { form: form.videos.vars.prototype })|e("html_attr") }}"
-        >
-            {% for video in form.videos %}
-                {{ include("trick/prototypes/video.html.twig", { form: video }) }}
-            {% endfor %}
+
+
+            <!-- Pictures -->
+            <div class="field is-horizontal">
+                <div class="field-label is-normal">
+                    {{ form_label(form.images, 'Image(s)') }}
+                </div>
+                <div class="field-body">
+                    <div class="control">
+
+                      <!--<div data-rel="#images" class="file-label btn-add" oninput="showFiles()"></div>-->
+                      <a href="#" data-rel="#images" class="btn-add">Ajouter une image</a>
+
+
+                            <!-- div -->
+                            <div
+                                    id="images"
+                                    data-index="{{ form.images|length > 0 ? form.images|last.vars.name+1 : 0 }}"
+                                    data-prototype="{{ include("trick/prototypes/image.html.twig", { form: form.images.vars.prototype })|e("html_attr") }}"
+                            >
+
+                          <!--  <span class="file-cta">
+                              <span class="file-icon">
+                                <i class="fas fa-upload"></i>
+                              </span>
+                              <span class="file-label">
+                                Choisir un ou des fichier(s)
+                              </span>
+                           </span> -->
+
+                                {% for image in form.images %}
+                                    {{ include("trick/prototypes/image.html.twig", { form: image }) }}
+                                {% endfor %}
+
+                            </div>
+                    </div>
+
+                       <!-- <output id="loadedFiles"></output>  -->
+
+                </div>
+            </div>
+
+
+            <div class="field is-horizontal">
+                <div class="field-label is-normal">
+                    {{ form_label(form.videos, "Vidéo(s)") }}
+                </div>
+                <div class="field-body">
+                    <div class="control">
+
+            <!-- Videos -->
+
+            <a href="#" data-rel="#videos" class="btn-add">Ajouter une vidéo</a>
+            <div
+                    id="videos"
+                    data-index="{{ form.videos|length > 0 ? form.videos|last.vars.name+1 : 0 }}"
+                    data-prototype="{{ include("trick/prototypes/video.html.twig", { form: form.videos.vars.prototype })|e("html_attr") }}"
+            >
+                {% for video in form.videos %}
+                    {{ include("trick/prototypes/video.html.twig", { form: video }) }}
+                {% endfor %}
+            </div>
+
+                    </div>
+
+                </div>
+            </div>
+
+
+        </section>
+
+            {{ form_widget(form.submit) }}
+            {{ form_end(form, { 'render_rest': false }) }}
+
         </div>
 
+    </div>
 
-        <a href="#" data-rel="#images" class="btn-add">Ajouter une image</a>
-        <div
-                id="images"
-                data-index="{{ form.images|length > 0 ? form.images|last.vars.name+1 : 0 }}"
-                data-prototype="{{ include("trick/prototypes/image.html.twig", { form: form.images.vars.prototype })|e("html_attr") }}"
-        >
-            {% for image in form.images %}
-                {{ include("trick/prototypes/image.html.twig", { form: image }) }}
-            {% endfor %}
-        </div>
-        {{ form_widget(form.submit) }}
-    {{ form_end(form, { 'render_rest': false }) }}
+
+
 {% endblock %}
 
 {% block javascripts %}
@@ -63,4 +185,5 @@
             })
         })
     </script>
+    <!--<script defer src="{# {{ asset('/js/formtrick.js') }} #}"></script>
 {% endblock %}

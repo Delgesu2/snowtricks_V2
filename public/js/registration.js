@@ -1,7 +1,7 @@
 /* Show loaded image in HTML */
 function showFile() {
 
-    let file = document.getElementById("user_registration_photo").files[0];
+    let file = document.getElementById("rregister__avatar").files[0];
     let side = document.getElementById("loadedFile");
 
     if(file) {
@@ -15,7 +15,7 @@ function showFile() {
 
 function showFileUpdating() {
 
-    let file = document.getElementById("update_user_photo").files[0];
+    let file = document.getElementById("register__avatar").files[0];
     let side = document.getElementById("loadedFile");
 
     if(file) {

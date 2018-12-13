@@ -43,9 +43,9 @@ class Mailer
         $message = new \Swift_Message();
 
         $message
-            ->setSender("bienvenue@snowtricks.com", "Snowtricks")
+            ->setSender("contact@devxdemo.eu", "Snowtricks")
             ->setSubject("Bienvenue sur Snowtricks")
-            ->setReplyTo("contact@snowtricks.com", "Snowtricks - Contact")
+            ->setReplyTo("contact@devxdemo.eu", "Snowtricks - Contact")
             ->setTo($user->getEmail(), $user->getUserName())
             ->setBody(
                 $this->twig->render("user/invitation_email.html.twig", ["user" => $user]),
@@ -55,4 +55,29 @@ class Mailer
 
         $this->mailer->send($message);
     }
+
+    /**
+     * @param User $user
+     * @throws \Twig_Error_Loader
+     * @throws \Twig_Error_Runtime
+     * @throws \Twig_Error_Syntax
+     */
+    public function sendNewToken(User $user)
+    {
+        $message = new \Swift_Message();
+
+        $message
+            ->setSender("contact@devxdemo.eu", "Snowtricks")
+            ->setSubject("Oubli du mot de passe. Réinitialisation")
+            ->setReplyTo("contact@devxdemo.eu", "Snowtricks - Contact")
+            ->setTo($user->getEmail(), $user->getUserName())
+            ->setBody(
+               $this->twig->render("user/password_reset_email.html.twig", ["user" => $user]),
+                "text/html"
+            )
+        ;
+
+        $this->mailer->send($message);
+    }
+
 }

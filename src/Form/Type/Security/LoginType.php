@@ -15,7 +15,7 @@ use Symfony\Component\OptionsResolver\OptionsResolver;
  *
  * @package App\Form\Type\Security
  */
-class LoginType extends AbstractType
+final class LoginType extends AbstractType
 {
     /**
      * @inheritdoc
