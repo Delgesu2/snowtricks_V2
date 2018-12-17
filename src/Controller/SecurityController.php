@@ -4,15 +4,15 @@ namespace App\Controller;
 
 use App\Entity\User;
 use App\Form\Handler\EmailCheckHandler;
+use App\Form\Handler\ResetPasswordHandler;
 use App\Form\Model\Security\Login;
 use App\Form\Type\Security\EmailCheckType;
 use App\Form\Type\Security\LoginType;
-use App\Form\Type\Security\RegisterType;
 use App\Form\Type\Security\ResetPasswordType;
 use App\Repository\UserRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
-use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Annotation\Route;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\ParamConverter;
 use Symfony\Component\Security\Http\Authentication\AuthenticationUtils;
 
 /**
@@ -21,6 +21,7 @@ use Symfony\Component\Security\Http\Authentication\AuthenticationUtils;
  * Sign in and using array as parameter (Exception and form)
  *
  * @package App\Controller
+ *
  * @Route("/security")
  */
 class SecurityController extends AbstractController
@@ -31,23 +32,13 @@ class SecurityController extends AbstractController
     private $repository;
 
     /**
-     * @var Request
-     */
-    private $request;
-
-    /**
      * SecurityController constructor.
      *
      * @param UserRepository $repository
-     * @param Request $request
      */
-    public function __construct(
-        UserRepository $repository,
-        Request        $request
-    )
+    public function __construct(UserRepository $repository)
     {
         $this->repository = $repository;
-        $this->request    = $request;
     }
 
 
@@ -73,10 +64,14 @@ class SecurityController extends AbstractController
      *
      * @return \Symfony\Component\HttpFoundation\Response
      */
-    public function forget()
+    public function forget(EmailCheckHandler $handler)
     {
+        if ($handler->handle([])) {
+            return $this->redirectToRoute('index');
+        }
+
         return $this->render('security/email_check.html.twig', [
-            'form' => $this->createForm(EmailCheckType::class)->createView()
+            'form' => $handler->getView()
         ]);
 
     }
@@ -85,35 +80,25 @@ class SecurityController extends AbstractController
     /**
      * @Route("/password_reset/{token}", name="password_reset")
      *
+     * @ParamConverter("user", options={"mapping": {"token": "passwordToken"}})
+     *
      * @return \Symfony\Component\HttpFoundation\Response
+     *
+     * @param User $user
      *
      * @throws \Doctrine\ORM\NonUniqueResultException
      */
-    public function passwordReset()
+    public function passwordReset(
+        User                 $user,
+        ResetPasswordHandler $handler
+    )
     {
-        // check if token exists in database
-        $user = $this->repository->checkToken($this->request->attributes->get('token'));
-
-        if ($user) {
-
-            return $this->render('security/password_reset.html.twig', [
-                'form' => $this->createForm(ResetPasswordType::class)->createView()
-            ]);
-
+        if ($handler->handle($user)) {
+            return $this->redirectToRoute('index');
         }
 
-        // if token does not exist in database
-        return $this->redirectToRoute('index');
-    }
-
-
-    /**
-     * @Route("/register", name="register")
-     */
-    public function register()
-    {
-        return $this->render('security/register.html.twig', [
-            'form' => $this->createForm(RegisterType::class)->createView()
+        return $this->render('security/password_reset.html.twig', [
+            'form' => $handler->getView()
         ]);
     }
 

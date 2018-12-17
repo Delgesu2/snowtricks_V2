@@ -24,28 +24,11 @@ class UserRepository extends ServiceEntityRepository
     }
 
     /**
-     * @param User $user
+     * Save user
      */
-    public function save(User $user)
+    public function save()
     {
-        $this->_em->persist($user);
         $this->_em->flush();
-    }
-
-    /**
-     * @param $token
-     *
-     * @return mixed
-     *
-     * @throws \Doctrine\ORM\NonUniqueResultException
-     */
-    public function checkToken($token)
-    {
-        return $this->createQueryBuilder('user')
-            ->where('user.validationToken = :token')
-            ->setParameter('token', $token)
-            ->getQuery()
-            ->getOneOrNullResult();
     }
 
 }

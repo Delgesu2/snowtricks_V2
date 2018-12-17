@@ -19,7 +19,7 @@ use Symfony\Component\OptionsResolver\OptionsResolver;
  * Class TrickType
  * @package App\Form\Type\Trick
  */
-class TrickType extends AbstractType
+final class TrickType extends AbstractType
 {
     /**
      * @inheritdoc
@@ -34,19 +34,19 @@ class TrickType extends AbstractType
                 "label" => "Description"
             ])
             ->add('category', EntityType::class, [
-                "label" => "Catégorie :",
-                "class" => Category::class,
+                "label"        => "Catégorie :",
+                "class"        => Category::class,
                 "choice_label" => "name"
             ])
             ->add("videos", CollectionType::class, [
-                "entry_type" => VideoType::class,
-                "allow_add" => true,
+                "entry_type"   => VideoType::class,
+                "allow_add"    => true,
                 "allow_delete" => true,
                 "by_reference" => false
             ])
             ->add("images", CollectionType::class, [
-                "entry_type" => ImageType::class,
-                "allow_add" => true,
+                "entry_type"   => ImageType::class,
+                "allow_add"    => true,
                 "allow_delete" => true,
                 "by_reference" => false
             ])
@@ -67,7 +67,7 @@ class TrickType extends AbstractType
     public function configureOptions(OptionsResolver $resolver)
     {
         $resolver->setDefaults([
-            'data_class' => Trick::class,
+            'data_class' => Trick::class
         ]);
     }
 }

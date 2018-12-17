@@ -4,6 +4,8 @@ namespace App\EntityListener;
 
 use App\Entity\User;
 use Doctrine\ORM\Event\LifecycleEventArgs;
+use Doctrine\ORM\Event\PreFlushEventArgs;
+use Doctrine\ORM\Event\PreUpdateEventArgs;
 use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
 
 /**
@@ -29,7 +31,22 @@ class HashPasswordListener
 
     /**
      * @param User $user
+     * @param PreUpdateEventArgs $preUpdateEventArgs
+     *
+     * @throws \Exception
+     */
+    public function preUpdate(User $user, PreUpdateEventArgs $preUpdateEventArgs): void
+    {
+        $user->setSalt(uniqid(mt_rand(), true));
+
+        $this->encodePassword($user);
+    }
+
+
+    /**
+     * @param User $user
      * @param LifecycleEventArgs $eventArgs
+     *
      * @throws \Exception
      */
     public function prePersist(User $user, LifecycleEventArgs $eventArgs): void
@@ -38,6 +55,7 @@ class HashPasswordListener
 
         $this->encodePassword($user);
     }
+
 
     /**
      * @param User $user

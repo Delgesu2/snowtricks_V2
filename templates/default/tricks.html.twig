@@ -24,12 +24,12 @@
 
                         {% if is_granted('ROLE_USER') %}
 
-                        <a href="{{ path('update_trick', {'slug':trick.slug}) }}">
+                        <a href="{{ path('trick_update', {'slug':trick.slug}) }}">
                                 <span class="icon">
                                     <i class="fas fa-pencil-alt" aria-hidden="true"></i>
                                 </span>
                         </a>
-                        <a href="{{ path('delete_trick', {'slug':trick.slug}) }}">
+                        <a href="{{ path('trick_delete', {'slug':trick.slug}) }}">
                                 <span class="icon">
                                     <i class="fas fa-trash" aria-hidden="true"></i>
                                 </span>

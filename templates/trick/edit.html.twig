@@ -146,7 +146,8 @@
 
         </section>
 
-            {{ form_widget(form.submit) }}
+            {{ form_widget(form.submit, {'attr': {'class': 'button is-warning'} }) }}
+
             {{ form_end(form, { 'render_rest': false }) }}
 
         </div>

@@ -45,7 +45,7 @@ class MailAddressCheckValidator extends ConstraintValidator
      */
     public function validate($value, Constraint $constraint)
     {
-        if (is_null($this->repository->countByEmail($value))) {
+        if (($this->repository->countByEmail($value)) == 0) {
             $this->context->buildViolation($constraint->message)
                 ->setParameter('{{ string }}', $value)
                 ->addViolation();

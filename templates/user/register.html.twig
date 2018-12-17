@@ -58,13 +58,13 @@
             <!-- Password -->
             <div class="field is-horizontal">
                 <div class="field-label is-normal">
-                    {{ form_label(form._password, 'Mot de passe')  }}
+                    {{ form_label(form.plainPassword, 'Mot de passe')  }}
                 </div>
                 <div class="field-body">
                     <div class="field">
                         <div class="control">
-                            {{ form_widget(form._password, {'attr': {'class': 'input'}}) }}
-                            {{ form_errors(form._password) }}
+                            {{ form_widget(form.plainPassword, {'attr': {'class': 'input'}}) }}
+                            {{ form_errors(form.plainPassword) }}
                         </div>
                         <p class="help is-warning">Le mot de passe doit se composer d'au moins 8 caractères, dont
                             au minimum 1 lettre majuscule, 1 chiffre, et ne comporter aucun espace.</p>
@@ -75,15 +75,15 @@
             <!-- Load profile picture -->
             <div class="field is-horizontal">
                 <div class="field-label is-normal">
-                    {{ form_label(form._avatar, 'Photo') }}
+                    {{ form_label(form.avatar, 'Photo') }}
                 </div>
                 <div class="field-body">
                     <div class="control">
                         <div class="file">
                             <label class="file-label" oninput="showFile()">
 
-                                    {{ form_widget(form._avatar) }}
-                                    {{ form_errors(form._avatar) }}
+                                    {{ form_widget(form.avatar) }}
+                                    {{ form_errors(form.avatar) }}
 
                             </label>
                             <output id="loadedFile"></output>
@@ -92,7 +92,7 @@
                 </div>
             </div>
 
-            {{ form_widget(form.submit, {'attr': {'class': 'button is-warning'}, 'label': 'Envoyer'}) }}
+            {{ form_widget(form.submit, {'attr': {'class': 'button is-warning'} }) }}
 
         </section>
 

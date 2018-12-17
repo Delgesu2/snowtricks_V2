@@ -15,6 +15,7 @@ class DefaultController extends AbstractController
 {
     /**
      * going to Homepage
+     *
      * @Route("/", name="index")
      */
     public function index(TrickRepository $repository)
@@ -26,6 +27,7 @@ class DefaultController extends AbstractController
 
     /**
      * going to selected trick page
+     *
      * @Route("/trick-{slug}", name="show")
      */
     public function show(Trick $trick)
@@ -37,6 +39,7 @@ class DefaultController extends AbstractController
 
     /**
      * going to full tricks list
+     *
      * @Route("/list", name="list")
      */
     public function trickList(TrickRepository $repository)

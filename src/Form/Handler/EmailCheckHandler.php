@@ -22,11 +22,6 @@ final class EmailCheckHandler extends AbstractHandler
     private $repository;
 
     /**
-     * @var FormInterface
-     */
-    protected $form;
-
-    /**
      * @var User
      */
     private $user;
@@ -62,11 +57,13 @@ final class EmailCheckHandler extends AbstractHandler
      */
     public function onSuccess(): void
     {
-        $oneUser = $this->repository->findOneByEmail();
+        /** @var User $oneUser */
+        $oneUser = $this->repository->findOneByEmail($this->form->getData()['email']);
 
         // create and save new token in User
-        $this->user->setValidationToken(uniqid(mt_rand(), true));
-        $this->repository->save($oneUser);  // mouaif .....
+        $oneUser->setPasswordToken(uniqid(mt_rand(), true));
+        $oneUser->setPasswordRequestedAt(new \DateTimeImmutable());
+        $this->repository->save();
 
         // sending token to User mail address
         $this->mailer->sendNewToken($oneUser);

@@ -53,7 +53,7 @@ trait ProfileTrait
     /**
      * @return string
      */
-    public function getUserName(): string
+    public function getUserName(): ?string
     {
         return $this->userName;
     }
@@ -85,7 +85,7 @@ trait ProfileTrait
     /**
      * @return string
      */
-    public function getAvatar(): string
+    public function getAvatar(): ?string
     {
         return $this->avatar;
     }

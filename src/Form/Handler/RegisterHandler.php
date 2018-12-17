@@ -1,16 +1,23 @@
 <?php
+/**
+ * Created by PhpStorm.
+ * User: ronsard
+ * Date: 16/12/18
+ * Time: 21:53
+ */
 
 namespace App\Form\Handler;
-use App\Form\Type\Trick\TrickType;
+
 use Doctrine\ORM\EntityManagerInterface;
 use Doctrine\ORM\UnitOfWork;
+use App\Form\Type\Security\RegisterType;
 
 /**
- * Class TrickHandler
+ * Class RegisterHandler
  *
  * @package App\Form\Handler
  */
-final class TrickHandler extends AbstractHandler
+final class RegisterHandler extends AbstractHandler
 {
     /**
      * @var EntityManagerInterface
@@ -18,7 +25,7 @@ final class TrickHandler extends AbstractHandler
     private $entityManager;
 
     /**
-     * TrickHandler constructor.
+     * RegisterHandler constructor.
      *
      * @param EntityManagerInterface $entityManager
      */
@@ -26,6 +33,7 @@ final class TrickHandler extends AbstractHandler
     {
         $this->entityManager = $entityManager;
     }
+
 
     /**
      * {@inheritdoc}
@@ -43,7 +51,7 @@ final class TrickHandler extends AbstractHandler
      */
     public function getFormType(): string
     {
-        return TrickType::class;
+        return RegisterType::class;
     }
 
 }
