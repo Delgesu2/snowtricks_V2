@@ -22,12 +22,12 @@
                 {% if is_granted('ROLE_USER', 'ROLE_ADMIN') %}
 
                 <div class="container has-text-right">
-                    <a href="{{ path('update_trick', {'slug':oneTrick.slug}) }}">
+                    <a href="{{ path('trick_update', {'slug':trick.slug}) }}">
                                         <span class="icon">
                                             <i class="fas fa-pencil-alt" aria-hidden="true"></i>
                                         </span>
                     </a>
-                    <a href="{{ path('delete_trick', {'slug':oneTrick.slug}) }}">
+                    <a href="{{ path('trick_delete', {'slug':trick.slug}) }}">
                                         <span class="icon">
                                             <i class="fas fa-trash" aria-hidden="true"></i>
                                         </span>
@@ -145,7 +145,7 @@
                         {% if comment.author.avatar is defined %}
                             <img src="{{ asset('uploads/' ~ comment.author.avatar ?? '') }}">
                         {% else %}
-                            <img src="{{ asset('/appImages/PersonPlaceholder.png') }}">
+                            <img src="{{ asset('appImages/PersonPlaceholder.png') }}">
                         {% endif %}
                     </p>
                 </figure>
@@ -175,12 +175,12 @@
 
             {% endfor %}
 
-            {% if is_granted('ROLE_USER', 'ROLE_ADMIN') %}
+           {# %} {% if is_granted('ROLE_USER', 'ROLE_ADMIN') %}
 
                 {% form_theme form 'theme/commentForm.html.twig' %}
                 {{ form(form) }}
 
-            {% endif %}
+            {% endif %} #}
 
         </div>
     </div>

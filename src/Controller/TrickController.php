@@ -5,6 +5,7 @@ namespace App\Controller;
 use App\Entity\Trick;
 use App\Form\Handler\TrickHandler;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\Filesystem\Filesystem;
 use Symfony\Component\Routing\Annotation\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
 
@@ -12,7 +13,7 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
  * Class TrickController
  * @package App\Controller
  * @Route("/tricks")
- *
+ * @IsGranted("ROLE_USER") *
  */
 class TrickController extends AbstractController
 {
@@ -54,8 +55,17 @@ class TrickController extends AbstractController
      *
      * @Route("/{slug}/delete", name="trick_delete")
      */
-    public function delete()
+    public function delete(Trick $trick, Filesystem $filesystem)
     {
         return true;
+
+        /**if (!\is_null($trick->getImages())) {
+
+            $trick->removeImage($trick->getImages());
+            $trick->removeVideo($trick->getVideos());
+
+
+        }**/
+
     }
 }

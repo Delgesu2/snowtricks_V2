@@ -2,32 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3f86b190-6a91-4dd1-82fb-18707a929c33" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/src/Form/Handler/RegisterHandler.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/DefaultController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/DefaultController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/SecurityController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/SecurityController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controller/TrickController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/TrickController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/UserController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/UserController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/Traits/PasswordTrait.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Traits/PasswordTrait.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/Traits/ProfileTrait.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Traits/ProfileTrait.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/User.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/EntityListener/HashPasswordListener.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/EntityListener/HashPasswordListener.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Form/Handler/EmailCheckHandler.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/Handler/EmailCheckHandler.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Form/Handler/HandlerInterface.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/Handler/HandlerInterface.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Form/Handler/ResetPasswordHandler.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/Handler/ResetPasswordHandler.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Form/Handler/TrickHandler.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/Handler/TrickHandler.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Form/Type/Security/RegisterType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/Type/Security/RegisterType.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Form/Type/Security/ResetPasswordType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/Type/Security/ResetPasswordType.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Form/Type/Trick/TrickType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/Type/Trick/TrickType.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Repository/UserRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/UserRepository.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Validator/Constraints/MailAddressCheckValidator.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Validator/Constraints/MailAddressCheckValidator.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/base.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/default/home.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/default/home.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/default/tricks.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/default/tricks.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/security/password_reset.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/security/password_reset.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/security/register.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/user/register.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/trick/edit.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/trick/edit.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/user/password_reset_email.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/user/password_reset_email.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/EntityListener/UploadImageListener.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/EntityListener/UploadImageListener.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Utils/Uploader.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Utils/Uploader.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/default/selected_trick.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/default/selected_trick.html.twig" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -74,20 +53,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="230">
-      <file leaf-file-name="register.html.twig" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/templates/user/register.html.twig">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="545">
-              <caret line="85" column="56" selection-start-line="85" selection-start-column="56" selection-end-line="85" selection-end-column="56" />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="UploadImageListener.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/EntityListener/UploadImageListener.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="687">
-              <caret line="59" column="5" selection-start-line="59" selection-start-column="5" selection-end-line="59" selection-end-column="5" />
+            <state relative-caret-position="1100">
+              <caret line="53" column="40" selection-start-line="53" selection-start-column="40" selection-end-line="53" selection-end-column="40" />
             </state>
           </provider>
         </entry>
@@ -95,22 +65,32 @@
       <file leaf-file-name="Uploader.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Utils/Uploader.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="291">
-              <caret line="19" column="28" lean-forward="true" selection-start-line="19" selection-start-column="28" selection-end-line="19" selection-end-column="28" />
+            <state relative-caret-position="511">
+              <caret line="35" column="12" lean-forward="true" selection-start-line="35" selection-start-column="12" selection-end-line="35" selection-end-column="12" />
+              <folding>
+                <element signature="e#29#70#0#PHP" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ImageRepository.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Repository/ImageRepository.php">
-          <provider selected="true" editor-type-id="text-editor" />
+      <file leaf-file-name="RegisterType.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Form/Type/Security/RegisterType.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="396">
+              <caret line="41" column="19" selection-start-line="41" selection-start-column="19" selection-end-line="41" selection-end-column="19" />
+              <folding>
+                <element signature="e#124#144#0#PHP" expanded="true" />
+              </folding>
+            </state>
+          </provider>
         </entry>
       </file>
-      <file leaf-file-name="Image.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Image.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Entity/Image.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="357">
-              <caret line="34" column="12" selection-start-line="34" selection-start-column="12" selection-end-line="34" selection-end-column="12" />
+            <state relative-caret-position="1281">
+              <caret line="64" column="26" selection-start-line="64" selection-start-column="26" selection-end-line="64" selection-end-column="26" />
             </state>
           </provider>
         </entry>
@@ -119,7 +99,7 @@
         <entry file="file://$PROJECT_DIR$/src/Entity/User.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="484">
-              <caret line="26" column="15" selection-start-line="26" selection-start-column="15" selection-end-line="26" selection-end-column="15" />
+              <caret line="26" column="16" selection-start-line="26" selection-start-column="16" selection-end-line="26" selection-end-column="16" />
             </state>
           </provider>
         </entry>
@@ -127,13 +107,25 @@
       <file leaf-file-name="ProfileTrait.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Entity/Traits/ProfileTrait.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1623">
+            <state relative-caret-position="-44">
               <caret line="11" column="6" selection-start-line="11" selection-start-column="6" selection-end-line="11" selection-end-column="6" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="user" pinned="false" current-in-tab="false">
+      <file leaf-file-name="UserController.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Controller/UserController.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-302">
+              <caret line="48" column="26" selection-start-line="48" selection-start-column="26" selection-end-line="48" selection-end-column="26" />
+              <folding>
+                <element signature="e#34#54#0#PHP" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="user" pinned="false" current-in-tab="true">
         <entry file="das://72578c6e-94db-4d50-8541-62e6ef56d3af/schema/snowtricks_V2/table/user">
           <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
             <state>
@@ -189,9 +181,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/Form/Type/Trick/ImageType.php" />
-        <option value="$PROJECT_DIR$/public/js/formtrick.js" />
-        <option value="$PROJECT_DIR$/public/js/registration.js" />
         <option value="$PROJECT_DIR$/templates/security/register.html.twig" />
         <option value="$PROJECT_DIR$/src/EntityListener/ForgetPswListener.php" />
         <option value="$PROJECT_DIR$/templates/security/login.html.twig" />
@@ -225,13 +214,11 @@
         <option value="$PROJECT_DIR$/src/EntityListener/HashPasswordListener.php" />
         <option value="$PROJECT_DIR$/src/Form/Handler/TrickHandler.php" />
         <option value="$PROJECT_DIR$/src/Controller/SecurityController.php" />
-        <option value="$PROJECT_DIR$/src/Entity/Traits/ProfileTrait.php" />
         <option value="$PROJECT_DIR$/src/Entity/Traits/PasswordTrait.php" />
         <option value="$PROJECT_DIR$/src/Entity/User.php" />
         <option value="$PROJECT_DIR$/src/Form/Handler/HandlerInterface.php" />
         <option value="$PROJECT_DIR$/src/Form/Handler/RegisterHandler.php" />
         <option value="$PROJECT_DIR$/templates/trick/edit.html.twig" />
-        <option value="$PROJECT_DIR$/src/Controller/TrickController.php" />
         <option value="$PROJECT_DIR$/templates/default/home.html.twig" />
         <option value="$PROJECT_DIR$/templates/default/tricks.html.twig" />
         <option value="$PROJECT_DIR$/src/Form/Type/Trick/TrickType.php" />
@@ -239,6 +226,11 @@
         <option value="$PROJECT_DIR$/src/Form/Type/Security/RegisterType.php" />
         <option value="$PROJECT_DIR$/templates/user/register.html.twig" />
         <option value="$PROJECT_DIR$/src/Controller/UserController.php" />
+        <option value="$PROJECT_DIR$/src/Entity/Traits/ProfileTrait.php" />
+        <option value="$PROJECT_DIR$/src/Entity/Image.php" />
+        <option value="$PROJECT_DIR$/src/Controller/TrickController.php" />
+        <option value="$PROJECT_DIR$/templates/default/selected_trick.html.twig" />
+        <option value="$PROJECT_DIR$/src/EntityListener/UploadImageListener.php" />
         <option value="$PROJECT_DIR$/src/Utils/Uploader.php" />
       </list>
     </option>
@@ -385,34 +377,24 @@
             <path>
               <item name="oc-daphp-p6" type="b2602c69:ProjectViewProjectNode" />
               <item name="oc-daphp-p6" type="462c0819:PsiDirectoryNode" />
-              <item name="config" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="oc-daphp-p6" type="b2602c69:ProjectViewProjectNode" />
-              <item name="oc-daphp-p6" type="462c0819:PsiDirectoryNode" />
               <item name="public" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="oc-daphp-p6" type="b2602c69:ProjectViewProjectNode" />
               <item name="oc-daphp-p6" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="public" type="462c0819:PsiDirectoryNode" />
+              <item name="uploads" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="oc-daphp-p6" type="b2602c69:ProjectViewProjectNode" />
               <item name="oc-daphp-p6" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="Repository" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="oc-daphp-p6" type="b2602c69:ProjectViewProjectNode" />
               <item name="oc-daphp-p6" type="462c0819:PsiDirectoryNode" />
-              <item name="templates" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="oc-daphp-p6" type="b2602c69:ProjectViewProjectNode" />
-              <item name="oc-daphp-p6" type="462c0819:PsiDirectoryNode" />
-              <item name="templates" type="462c0819:PsiDirectoryNode" />
-              <item name="user" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="Form" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -501,12 +483,13 @@
       <workItem from="1544783939574" duration="18836000" />
       <workItem from="1544992493326" duration="7901000" />
       <workItem from="1545002195400" duration="199000" />
-      <workItem from="1545047899198" duration="22066000" />
+      <workItem from="1545047899198" duration="26335000" />
+      <workItem from="1545143666522" duration="6246000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="313938000" />
+    <option name="totallyTimeSpent" value="324453000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -524,17 +507,17 @@
       <window_info anchor="bottom" id="TODO" order="11" sideWeight="0.49945945" weight="0.32990867" />
       <window_info anchor="bottom" id="Event Log" order="2" sideWeight="0.50054055" side_tool="true" weight="0.32990867" />
       <window_info anchor="bottom" id="Database Changes" order="1" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" order="4" sideWeight="0.49945945" weight="0.32990867" />
       <window_info anchor="bottom" id="Run" order="7" />
+      <window_info anchor="bottom" id="Version Control" order="4" sideWeight="0.49945945" weight="0.32990867" />
       <window_info anchor="bottom" id="Terminal" order="3" weight="0.27853882" />
       <window_info anchor="right" id="Remote Host" order="1" weight="0.32972974" />
       <window_info anchor="bottom" id="Database Console" order="12" weight="0.32990867" />
-      <window_info active="true" content_ui="combo" id="Project" order="1" sideWeight="0.49429223" visible="true" weight="0.17297298" />
+      <window_info active="true" content_ui="combo" id="Project" order="1" sideWeight="0.49315068" visible="true" weight="0.17621621" />
       <window_info anchor="bottom" id="Docker" order="0" show_stripe_button="false" />
       <window_info anchor="right" id="Database" order="0" weight="0.12486486" />
-      <window_info id="Structure" order="2" sideWeight="0.50570774" side_tool="true" weight="0.16702703" />
-      <window_info id="Favorites" order="0" sideWeight="0.5024958" side_tool="true" weight="0.1772973" />
+      <window_info id="Structure" order="2" sideWeight="0.5068493" side_tool="true" weight="0.17297298" />
       <window_info anchor="bottom" id="Debug" order="8" weight="0.4" />
+      <window_info id="Favorites" order="0" sideWeight="0.5024958" side_tool="true" weight="0.1772973" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="10" weight="0.4" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="2" type="SLIDING" weight="0.4" />
@@ -556,39 +539,40 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/vendor/symfony/form/FormFactoryInterface.php">
+    <entry file="file://$PROJECT_DIR$/src/Entity/Trick.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-792">
-          <caret line="16" column="10" selection-start-line="16" selection-start-column="10" selection-end-line="16" selection-end-column="10" />
+        <state relative-caret-position="6644">
+          <caret line="307" column="7" selection-start-line="307" selection-start-column="7" selection-end-line="307" selection-end-column="7" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/symfony/framework-bundle/Controller/AbstractController.php">
+    <entry file="file://$PROJECT_DIR$/src/Entity/User.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="533">
-          <caret line="85" column="45" selection-start-line="85" selection-start-column="45" selection-end-line="85" selection-end-column="45" />
+        <state relative-caret-position="484">
+          <caret line="26" column="16" selection-start-line="26" selection-start-column="16" selection-end-line="26" selection-end-column="16" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Form/Handler/AbstractHandler.php">
+    <entry file="file://$PROJECT_DIR$/src/Entity/Traits/ProfileTrait.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="885">
-          <caret line="78" column="24" selection-start-line="78" selection-start-column="24" selection-end-line="78" selection-end-column="24" />
+        <state relative-caret-position="220">
+          <caret line="11" column="6" selection-start-line="11" selection-start-column="6" selection-end-line="11" selection-end-column="6" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Form/Handler/HandlerInterface.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="462">
-          <caret line="21" lean-forward="true" selection-start-line="21" selection-end-line="21" />
+    <entry file="das://72578c6e-94db-4d50-8541-62e6ef56d3af/schema/snowtricks_V2/table/user">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/user/password_reset_email.html.twig">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/email.html.twig">
-      <provider selected="true" editor-type-id="text-editor" />
+    <entry file="file://$PROJECT_DIR$/templates/default/selected_trick.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="4004">
+          <caret line="182" column="26" selection-start-line="182" selection-start-column="26" selection-end-line="182" selection-end-column="26" />
+        </state>
+      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/security/email_check.html.twig">
       <provider selected="true" editor-type-id="text-editor">
@@ -626,9 +610,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/user/invitation_email.html.twig">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Utils/Mailer.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="330">
@@ -664,12 +645,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/EntityListener/ResetPasswordTokenListener.php">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/EntityListener/SlugTrickNameListener.php">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/EntityListener/SlugUserNameListener.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-325" />
@@ -686,16 +661,6 @@
           <caret line="68" column="23" selection-start-line="68" selection-start-column="23" selection-end-line="68" selection-end-column="23" />
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Entity/Trick.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2744">
-          <caret line="131" column="21" selection-start-line="131" selection-start-column="21" selection-end-line="131" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Security/UserChecker.php">
-      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Security/Authenticator/UserAuthenticator.php">
       <provider selected="true" editor-type-id="text-editor">
@@ -723,20 +688,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/default/home.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="468">
-          <caret line="64" column="42" selection-start-line="64" selection-start-column="42" selection-end-line="64" selection-end-column="54" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Manager/UserManager.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="599">
-          <caret line="33" column="5" selection-start-line="33" selection-start-column="5" selection-end-line="33" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Form/Handler/TrickHandler.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="577">
@@ -744,30 +695,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Controller/TrickController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-127">
-          <caret line="20" column="6" selection-start-line="20" selection-start-column="6" selection-end-line="20" selection-end-column="6" />
-          <folding>
-            <element signature="e#34#55#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Form/Type/Trick/TrickType.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1017">
           <caret line="69" column="40" selection-start-line="69" selection-start-column="40" selection-end-line="69" selection-end-column="40" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/config/packages/security.yaml">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/config/services.yaml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="506">
-          <caret line="23" column="46" selection-start-line="23" selection-start-column="46" selection-end-line="23" selection-end-column="46" />
         </state>
       </provider>
     </entry>
@@ -785,51 +716,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Form/Type/Security/RegisterType.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="396">
-          <caret line="41" column="19" selection-start-line="41" selection-start-column="19" selection-end-line="41" selection-end-column="19" />
-          <folding>
-            <element signature="e#124#144#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/user/register.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="545">
-          <caret line="85" column="56" selection-start-line="85" selection-start-column="56" selection-end-line="85" selection-end-column="56" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://72578c6e-94db-4d50-8541-62e6ef56d3af/schema/snowtricks_V2/table/image">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Controller/DefaultController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="836">
           <caret line="41" column="6" selection-start-line="41" selection-start-column="6" selection-end-line="41" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://72578c6e-94db-4d50-8541-62e6ef56d3af/schema/snowtricks_V2/table/user">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Controller/UserController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="424">
-          <caret line="81" column="30" selection-start-line="81" selection-start-column="30" selection-end-line="81" selection-end-column="30" />
-          <folding>
-            <element signature="e#34#54#0#PHP" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -840,41 +730,161 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/EntityListener/UploadImageListener.php">
+    <entry file="file://$PROJECT_DIR$/config/services.yaml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="687">
-          <caret line="59" column="5" selection-start-line="59" selection-start-column="5" selection-end-line="59" selection-end-column="5" />
+        <state relative-caret-position="506">
+          <caret line="23" column="46" selection-start-line="23" selection-start-column="46" selection-end-line="23" selection-end-column="46" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Repository/ImageRepository.php">
-      <provider selected="true" editor-type-id="text-editor" />
+    <entry file="file://$PROJECT_DIR$/vendor/symfony/http-foundation/File/UploadedFile.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="291">
+          <caret line="31" column="6" selection-start-line="31" selection-start-column="6" selection-end-line="31" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/user/register.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="545">
+          <caret line="85" column="56" selection-start-line="85" selection-start-column="56" selection-end-line="85" selection-end-column="56" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/default/home.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="64" column="42" selection-start-line="64" selection-start-column="42" selection-end-line="64" selection-end-column="54" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vendor/doctrine/collections/lib/Doctrine/Common/Collections/ArrayCollection.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="357">
+          <caret line="138" column="20" selection-start-line="138" selection-start-column="20" selection-end-line="138" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Manager/Interfaces/UserManagerInterface.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="15" column="20" selection-start-line="15" selection-start-column="20" selection-end-line="15" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Manager/UserManager.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="632">
+          <caret line="33" column="5" selection-start-line="33" selection-start-column="5" selection-end-line="33" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Entity/Trick.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="797">
+          <caret line="307" column="7" selection-start-line="307" selection-start-column="7" selection-end-line="307" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://72578c6e-94db-4d50-8541-62e6ef56d3af/schema/snowtricks_V2/table/trick">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Controller/TrickController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="15" column="26" selection-start-line="15" selection-start-column="26" selection-end-line="15" selection-end-column="26" />
+          <folding>
+            <element signature="e#34#55#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/uploads/image.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/appImages/PersonPlaceholder.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/default/selected_trick.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="401">
+          <caret line="147" column="48" selection-start-line="147" selection-start-column="48" selection-end-line="147" selection-end-column="48" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Form/Type/Security/RegisterType.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="396">
+          <caret line="41" column="19" selection-start-line="41" selection-start-column="19" selection-end-line="41" selection-end-column="19" />
+          <folding>
+            <element signature="e#124#144#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Controller/UserController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-302">
+          <caret line="48" column="26" selection-start-line="48" selection-start-column="26" selection-end-line="48" selection-end-column="26" />
+          <folding>
+            <element signature="e#34#54#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Utils/Uploader.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="291">
-          <caret line="19" column="28" lean-forward="true" selection-start-line="19" selection-start-column="28" selection-end-line="19" selection-end-column="28" />
+        <state relative-caret-position="511">
+          <caret line="35" column="12" lean-forward="true" selection-start-line="35" selection-start-column="12" selection-end-line="35" selection-end-column="12" />
+          <folding>
+            <element signature="e#29#70#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/EntityListener/UploadImageListener.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1100">
+          <caret line="53" column="40" selection-start-line="53" selection-start-column="40" selection-end-line="53" selection-end-column="40" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Entity/User.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="484">
-          <caret line="26" column="15" selection-start-line="26" selection-start-column="15" selection-end-line="26" selection-end-column="15" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Entity/Traits/ProfileTrait.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1623">
-          <caret line="11" column="6" selection-start-line="11" selection-start-column="6" selection-end-line="11" selection-end-column="6" />
+          <caret line="26" column="16" selection-start-line="26" selection-start-column="16" selection-end-line="26" selection-end-column="16" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Entity/Image.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="34" column="12" selection-start-line="34" selection-start-column="12" selection-end-line="34" selection-end-column="12" />
+        <state relative-caret-position="1281">
+          <caret line="64" column="26" selection-start-line="64" selection-start-column="26" selection-end-line="64" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Entity/Traits/ProfileTrait.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-44">
+          <caret line="11" column="6" selection-start-line="11" selection-start-column="6" selection-end-line="11" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://72578c6e-94db-4d50-8541-62e6ef56d3af/schema/snowtricks_V2/table/image">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://72578c6e-94db-4d50-8541-62e6ef56d3af/schema/snowtricks_V2/table/user">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
         </state>
       </provider>
     </entry>
