@@ -1,0 +1,48 @@
+{% form_theme form _self %}
+
+{% block form_errors %}
+    {% spaceless %}
+        {% if errors|length > 0 %}
+            <ul>
+                {% for error in errors %}
+                    <li>{{ error.message }}</li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+    {% endspaceless %}
+{% endblock form_errors %}
+
+{% block form %}
+
+    {{ form_start(form) }}
+
+    <article class="media">
+
+        <figure class="media-left">
+            <p class="image is-64x64">
+                {% if app.user.photo.getPath is defined %}
+                    <img src="{{ asset(app.user.photo.getPath ?? '') }}">
+                {% else %}
+                    <img src="{{ asset('images/users/PersonPlaceholder.png') }}">
+                {% endif %}
+            </p>
+        </figure>
+
+        <div class="media-content">
+            <div class="field">
+                <p class="control">
+                    {{ form_widget(form.text, {'attr': {'placeholder': 'Ajoute ton commentaire'} })  }}
+                </p>
+            </div>
+            <div class="field">
+                <p class="control">
+                    <button type="submit" class="button" >Envoyer</button>
+                </p>
+            </div>
+        </div>
+
+    </article>
+
+    {{ form_end(form) }}
+
+{% endblock %}
