@@ -3,6 +3,7 @@
 namespace App\EntityListener;
 
 use App\Entity\Comment;
+use App\Entity\Trick;
 use Doctrine\ORM\Event\LifecycleEventArgs;
 use Symfony\Component\Security\Core\Authentication\Token\Storage\TokenStorageInterface;
 
@@ -19,20 +20,35 @@ class CommentTrickListener
     private $tokenStorage;
 
     /**
-     * CommentTrickListener constructor.
-     * @param TokenStorageInterface $tokenStorage
+     * @var Trick
      */
-    public function __construct(TokenStorageInterface $tokenStorage)
+    private $trick;
+
+    /**
+     * CommentTrickListener constructor.
+     *
+     * @param TokenStorageInterface $tokenStorage
+     * @param Trick $trick
+     */
+    public function __construct(
+        TokenStorageInterface $tokenStorage,
+        Trick                 $trick
+    )
     {
         $this->tokenStorage = $tokenStorage;
+        $this->trick        = $trick;
     }
 
     /**
      * @param Comment $comment
      * @param LifecycleEventArgs $eventArgs
+     *
      * @throws \Exception
      */
-    public function prePersist(Comment $comment, LifecycleEventArgs $eventArgs): void
+    public function prePersist(
+        Comment $comment,
+        LifecycleEventArgs $eventArgs
+    ): void
     {
         $comment->setCreatedAt(new \DateTimeImmutable());
 

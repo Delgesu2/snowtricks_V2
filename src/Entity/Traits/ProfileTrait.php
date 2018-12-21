@@ -31,7 +31,7 @@ trait ProfileTrait
 
     /**
      * @var Collection
-     * @ORM\OneToMany(targetEntity="Comment", mappedBy="author")
+     * @ORM\OneToMany(targetEntity="Comment", mappedBy="author", orphanRemoval=true)
      */
     private $comments;
 

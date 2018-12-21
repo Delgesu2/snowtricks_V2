@@ -12,7 +12,7 @@ use Symfony\Component\OptionsResolver\OptionsResolver;
  * Class VideoType
  * @package App\Form\Type\Trick
  */
-class VideoType extends AbstractType
+final class VideoType extends AbstractType
 {
     /**
      * @inheritdoc

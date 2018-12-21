@@ -25,7 +25,7 @@ class Comment
 
     /**
      * @var Trick
-     * @ORM\ManyToOne(targetEntity="Trick", inversedBy="comments")
+     * @ORM\ManyToOne(targetEntity="Trick", inversedBy="comments", cascade={"persist"})
      * @ORM\JoinColumn(onDelete="CASCADE")
      */
     private $trick;
@@ -76,7 +76,7 @@ class Comment
     /**
      * @return UserInterface
      */
-    public function getAuthor(): UserInterface
+    public function getAuthor(): ?UserInterface
     {
         return $this->author;
     }
@@ -92,7 +92,7 @@ class Comment
     /**
      * @return string
      */
-    public function getContent(): string
+    public function getContent(): ?string
     {
         return $this->content;
     }

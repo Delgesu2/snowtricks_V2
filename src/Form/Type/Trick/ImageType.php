@@ -12,7 +12,7 @@ use Symfony\Component\OptionsResolver\OptionsResolver;
  * Class ImageType
  * @package App\Form\Type\Trick
  */
-class ImageType extends AbstractType
+final class ImageType extends AbstractType
 {
     /**
      * @inheritdoc

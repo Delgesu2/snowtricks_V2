@@ -2,9 +2,12 @@
 
 namespace App\Controller;
 
+use App\Entity\Comment;
 use App\Entity\Trick;
+use App\Form\Handler\CommentHandler;
 use App\Repository\TrickRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\Form\FormInterface;
 use Symfony\Component\Routing\Annotation\Route;
 
 /**
@@ -29,11 +32,24 @@ class DefaultController extends AbstractController
      * going to selected trick page
      *
      * @Route("/trick-{slug}", name="show")
+     *
+     * @param Trick $trick
+     * @param CommentHandler $handler
+     *
+     * @return \Symfony\Component\HttpFoundation\Response
      */
-    public function show(Trick $trick)
+    public function show(Trick $trick, CommentHandler $handler)
     {
+        if ($handler->handle(new Comment())) {
+            return $this->render('default/selected_trick.html.twig', [
+                'trick' => $trick,
+                'form'  => $handler->getView()
+            ]);
+        }
+
         return $this->render('default/selected_trick.html.twig', [
-            'trick' => $trick
+            'trick' => $trick,
+            'form'  => $handler->getView()
         ]);
     }
 
