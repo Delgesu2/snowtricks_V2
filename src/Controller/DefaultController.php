@@ -40,11 +40,12 @@ class DefaultController extends AbstractController
      */
     public function show(Trick $trick, CommentHandler $handler)
     {
-        if ($handler->handle(new Comment())) {
-            return $this->render('default/selected_trick.html.twig', [
-                'trick' => $trick,
-                'form'  => $handler->getView()
-            ]);
+        $comment = new Comment();
+
+        $comment->setTrick($trick);
+
+        if ($handler->handle($comment)) {
+            return $this->redirectToRoute('show', ['slug' => $trick->getSlug()]);
         }
 
         return $this->render('default/selected_trick.html.twig', [

@@ -28,15 +28,10 @@ class CommentTrickListener
      * CommentTrickListener constructor.
      *
      * @param TokenStorageInterface $tokenStorage
-     * @param Trick $trick
      */
-    public function __construct(
-        TokenStorageInterface $tokenStorage,
-        Trick                 $trick
-    )
+    public function __construct(TokenStorageInterface $tokenStorage)
     {
         $this->tokenStorage = $tokenStorage;
-        $this->trick        = $trick;
     }
 
     /**

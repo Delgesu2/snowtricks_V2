@@ -142,8 +142,8 @@
 
                 <figure class="media-left">
                     <p class="image is-64x64">
-                        {% if comment.author.getAvatar is defined %}
-                            <img src="{{ asset('uploads/' ~ comment.author.getAvatar ?? '') }}">
+                        {% if comment.author.avatar is defined %}
+                            <img src="{{ asset('uploads/' ~ comment.author.avatar ?? '') }}">
                         {% else %}
                             <img src="{{ asset('appImages/PersonPlaceholder.png') }}">
                         {% endif %}

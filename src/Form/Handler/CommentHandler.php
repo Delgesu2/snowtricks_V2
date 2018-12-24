@@ -50,7 +50,6 @@ class CommentHandler extends AbstractHandler
     public function onSuccess(): void
     {
 
-
         if($this->entityManager->getUnitOfWork()->getEntityState($this->data) === UnitOfWork::STATE_NEW) {
 
             $this->entityManager->persist($this->data);
