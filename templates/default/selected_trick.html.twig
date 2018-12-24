@@ -143,7 +143,7 @@
                 <figure class="media-left">
                     <p class="image is-64x64">
                         {% if comment.author.avatar is defined %}
-                            <img src="{{ asset('uploads/' ~ comment.author.getAvatar ?? '') }}">
+                            <img src="{{ asset('uploads/' ~ comment.author.avatar ?? '') }}">
                         {% else %}
                             <img src="{{ asset('appImages/PersonPlaceholder.png') }}">
                         {% endif %}
@@ -177,7 +177,7 @@
 
             {% if is_granted('ROLE_USER', 'ROLE_ADMIN') %}
 
-                {% form_theme form 'commentForm.html.twig' %}
+                {% form_theme form 'default/commentForm.html.twig' %}
                 {{ form(form) }}
 
             {% endif %}

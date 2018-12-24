@@ -22,7 +22,7 @@ use Symfony\Component\OptionsResolver\OptionsResolver;
 final class TrickType extends AbstractType
 {
     /**
-     * @inheritdoc
+     * {@inheritdoc}
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
