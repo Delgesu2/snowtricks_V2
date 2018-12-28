@@ -32,10 +32,6 @@ class Uploader
      */
     public function upload(UploadedFile $file): string
     {
-
-
-        //$this->uploader->upload($form->getData()->avatar);
-
         $fileName = md5(uniqid()).'.'.$file->guessExtension();
         $file->move($this->uploadDir, $fileName);
 

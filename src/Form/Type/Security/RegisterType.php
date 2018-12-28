@@ -45,6 +45,8 @@ final class RegisterType extends AbstractType
                 'data_class' => null
             ])
 
+
+
             ->add('plainPassword', PasswordType::class, [
                 'required'    => true,
                 'constraints' => [
@@ -52,6 +54,24 @@ final class RegisterType extends AbstractType
                     new Password()
                 ]
             ])
+
+
+            /**
+            ->addEventListener(FormEvents::PRE_SET_DATA, function (FormEvent $event) {
+                /** @var User $user */
+          /**    $user = $event->getData();
+
+                if (!$user) {
+
+                    $event->getForm()->add('plainPassword', PasswordType::class, [
+                        'constraints' => [
+                            new NotBlank(),
+                            new Password()
+                        ]
+                    ]);
+                }
+            }) **/
+
 
             ->addEventListener(FormEvents::PRE_SET_DATA, function (FormEvent $event) {
                 /** @var User $user */

@@ -5,11 +5,12 @@ namespace App\EntityListener;
 use App\Entity\Image;
 use App\Utils\Uploader;
 use Doctrine\ORM\Event\LifecycleEventArgs;
-use Symfony\Component\Form\FormInterface;
 
 /**
  * Class UploadImageListener
+ *
  * Image uploader helper listener
+ *
  * @package App\EntityListener
  */
 class UploadImageListener
@@ -58,5 +59,6 @@ class UploadImageListener
         }
 
         $image->setPath($this->uploader->upload($image->getUploadFile()));
+
     }
 }

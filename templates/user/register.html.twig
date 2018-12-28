@@ -55,6 +55,9 @@
                 </div>
             </div>
 
+
+            {% if form.plainPassword is not null %}
+
             <!-- Password -->
             <div class="field is-horizontal">
                 <div class="field-label is-normal">
@@ -71,6 +74,9 @@
                     </div>
                 </div>
             </div>
+
+            {% endif %}
+
 
             <!-- Load profile picture -->
             <div class="field is-horizontal">
@@ -90,6 +96,7 @@
                         </div>
                     </div>
                 </div>
+
             </div>
 
             {{ form_widget(form.submit, {'attr': {'class': 'button is-warning'} }) }}

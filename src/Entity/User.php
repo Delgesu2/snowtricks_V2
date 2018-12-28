@@ -15,7 +15,8 @@ use Symfony\Component\Security\Core\User\UserInterface;
  * @ORM\EntityListeners({
  *     "App\EntityListener\HashPasswordListener",
  *     "App\EntityListener\SlugUserNameListener",
- *     "App\EntityListener\RegisterListener"
+ *     "App\EntityListener\RegisterListener",
+ *     "App\EntityListener\UserListener"
  * })
  */
 class User implements UserInterface
