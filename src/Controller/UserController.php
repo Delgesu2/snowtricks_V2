@@ -4,6 +4,7 @@ namespace App\Controller;
 
 use App\Entity\User;
 use App\Form\Handler\RegisterHandler;
+use App\Form\Handler\UpdateUserHandler;
 use App\Form\Type\Security\RegisterType;
 use App\Manager\Interfaces\UserManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -77,11 +78,11 @@ class UserController extends AbstractController
      *
      * @Route("/update", name="user_update")
      *
-     * @param RegisterHandler $handler
+     * @param UpdateUserHandler $handler
      * @return \Symfony\Component\HttpFoundation\RedirectResponse|\Symfony\Component\HttpFoundation\Response
      * @IsGranted("ROLE_USER")
      */
-    public function update(RegisterHandler $handler)
+    public function update(UpdateUserHandler $handler)
     {
         $user = $this->tokenStorage->getToken()->getUser();
 
@@ -89,7 +90,7 @@ class UserController extends AbstractController
             return $this->redirectToRoute('index');
         }
 
-        return $this->render('user/register.html.twig', [
+        return $this->render('user/updateuser.html.twig', [
             'form' => $handler->getView()
         ]);
     }

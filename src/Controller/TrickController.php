@@ -4,6 +4,7 @@ namespace App\Controller;
 
 use App\Entity\Trick;
 use App\Form\Handler\TrickHandler;
+use App\Repository\TrickRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Filesystem\Filesystem;
 use Symfony\Component\Routing\Annotation\Route;
@@ -54,18 +55,32 @@ class TrickController extends AbstractController
      * deleting Trick
      *
      * @Route("/{slug}/delete", name="trick_delete")
+     *
+     * @param Trick $trick
+     * @param Filesystem $filesystem
+     * @param TrickRepository $repository
+     *
+     * @return \Symfony\Component\HttpFoundation\RedirectResponse
      */
-    public function delete(Trick $trick, Filesystem $filesystem)
+    public function delete(
+        Trick           $trick,
+        Filesystem      $filesystem,
+        TrickRepository $repository
+    )
     {
-        return true;
+        // delete file
+        if (!\is_null($trick->getImages())) {
 
-        /**if (!\is_null($trick->getImages())) {
+           foreach ($trick->getImages()->toArray() as $image)
+           {
+               $filesystem->remove('uploads/' . $image->getPath());
+           }
 
-            $trick->removeImage($trick->getImages());
-            $trick->removeVideo($trick->getVideos());
+        }
 
+        // delete object
+        $repository->deleteTrick($trick);
 
-        }**/
-
+        return $this->redirectToRoute('list');
     }
 }

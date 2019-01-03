@@ -24,10 +24,12 @@ class UserRepository extends ServiceEntityRepository
     }
 
     /**
-     * Save user
+     * Save User
+     * @param $user
      */
-    public function save()
+    public function save($user)
     {
+        $this->_em->persist($user);
         $this->_em->flush();
     }
 

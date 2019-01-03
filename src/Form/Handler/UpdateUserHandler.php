@@ -4,10 +4,10 @@ namespace App\Form\Handler;
 
 use App\Entity\Image;
 use App\Entity\User;
+use App\Form\Type\Security\UpdateUserType;
 use App\Repository\ImageRepository;
 use Doctrine\ORM\EntityManagerInterface;
 use Doctrine\ORM\UnitOfWork;
-use App\Form\Type\Security\RegisterType;
 use Symfony\Component\Filesystem\Filesystem;
 
 /**
@@ -15,7 +15,7 @@ use Symfony\Component\Filesystem\Filesystem;
  *
  * @package App\Form\Handler
  */
-final class RegisterHandler extends AbstractHandler
+final class UpdateUserHandler extends AbstractHandler
 {
     /**
      * @var EntityManagerInterface
@@ -64,10 +64,12 @@ final class RegisterHandler extends AbstractHandler
      */
     public function onSuccess(): void
     {
+        /**
         if($this->entityManager->getUnitOfWork()->getEntityState($this->data) === UnitOfWork::STATE_NEW) {
 
             $this->entityManager->persist($this->data);
         }
+         * **/
         $this->entityManager->flush();
     }
 
@@ -76,7 +78,7 @@ final class RegisterHandler extends AbstractHandler
      */
     public function getFormType(): string
     {
-        return RegisterType::class;
+        return UpdateUserType::class;
     }
 
 }

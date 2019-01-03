@@ -7,6 +7,8 @@ use App\Entity\Traits\ProfileTrait;
 use App\Entity\Traits\ValidationTrait;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Security\Core\User\UserInterface;
+use Symfony\Component\Validator\Constraints as Assert;
+
 
 /**
  * Class User
@@ -16,10 +18,10 @@ use Symfony\Component\Security\Core\User\UserInterface;
  *     "App\EntityListener\HashPasswordListener",
  *     "App\EntityListener\SlugUserNameListener",
  *     "App\EntityListener\RegisterListener",
- *     "App\EntityListener\UserListener"
+ *     "App\EntityListener\UploadAvatarListener"
  * })
  */
-class User implements UserInterface
+class User implements UserInterface, \Serializable
 {
     use PasswordTrait;
 
@@ -114,5 +116,25 @@ class User implements UserInterface
         // TODO: Implement eraseCredentials() method.
     }
 
+    /** @see \Serializable::serialize() */
+    public function serialize()
+    {
+        return serialize(array(
+            $this->id,
+            $this->userName,
+            $this->password
+        ));
+    }
+
+
+    /** @see \Serializable::unserialize() */
+    public function unserialize($serialized)
+    {
+        list(
+            $this->id,
+            $this->userName,
+            $this->password
+            ) = unserialize($serialized);
+    }
 
 }

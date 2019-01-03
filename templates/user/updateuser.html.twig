@@ -1,6 +1,6 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Snowtricks - Nouvel utilisateur{% endblock %}
+{% block title %}Snowtricks - Modification données utilisateurs{% endblock %}
 
 {% block body %}
 
@@ -14,7 +14,7 @@
                     <div class="hero-body">
                         <div class="container has-text-centered">
                             <h1 class="title">
-                                Création d'un nouveau profile
+                                Modifier les données du profil
                             </h1>
                         </div>
                     </div>
@@ -55,29 +55,6 @@
                 </div>
             </div>
 
-
-           {# {% if form.plainPassword is defined %}  #}
-
-            <!-- Password -->
-            <div class="field is-horizontal">
-                <div class="field-label is-normal">
-                    {{ form_label(form.plainPassword, 'Mot de passe')  }}
-                </div>
-                <div class="field-body">
-                    <div class="field">
-                        <div class="control">
-                            {{ form_widget(form.plainPassword, {'attr': {'class': 'input'}}) }}
-                            {{ form_errors(form.plainPassword) }}
-                        </div>
-                        <p class="help is-warning">Le mot de passe doit se composer d'au moins 8 caractères, dont
-                            au minimum 1 lettre majuscule, 1 chiffre, et ne comporter aucun espace.</p>
-                    </div>
-                </div>
-            </div>
-
-          {#  {% endif %} #}
-
-
             <!-- Load profile picture -->
             <div class="field is-horizontal">
                 <div class="field-label is-normal">
@@ -88,8 +65,8 @@
                         <div class="file">
                             <label class="file-label" oninput="showFile()">
 
-                                    {{ form_widget(form.uploadFile) }}
-                                    {{ form_errors(form.uploadFile) }}
+                                {{ form_widget(form.uploadFile) }}
+                                {{ form_errors(form.uploadFile) }}
 
                             </label>
                             <output id="loadedFile"></output>
@@ -105,6 +82,6 @@
 
         {{ form_end(form) }}
     {% endblock %}
-        <script defer src="{{ asset('/js/registration.js') }}"></script>
+    <script defer src="{{ asset('/js/registration.js') }}"></script>
 
 {% endblock %}

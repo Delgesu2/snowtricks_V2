@@ -3,6 +3,7 @@
 namespace App\Entity\Traits;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
+use Symfony\Component\HttpFoundation\File\UploadedFile;
 
 /**
  * Trait ProfileTrait
@@ -28,6 +29,12 @@ trait ProfileTrait
      * @ORM\Column(type="string")
      */
     private $avatar;
+
+    /**
+     * @var UploadedFile|null
+     * @Assert\Image
+     */
+    private $uploadFile;
 
     /**
      * @var Collection
@@ -114,5 +121,20 @@ trait ProfileTrait
         return $this->tricks;
     }
 
+    /**
+     * @return null|UploadedFile
+     */
+    public function getUploadFile(): ?UploadedFile
+    {
+        return $this->uploadFile;
+    }
+
+    /**
+     * @param null|UploadedFile $uploadFile
+     */
+    public function setUploadFile(?UploadedFile $uploadFile): void
+    {
+        $this->uploadFile = $uploadFile;
+    }
 
 }

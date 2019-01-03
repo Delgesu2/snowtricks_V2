@@ -9,7 +9,7 @@
         <figure class="media-left">
             <p class="image is-64x64">
                 {% if app.user.avatar is defined %}
-                    <img src="{{ asset(app.user.avatar) }}">
+                    <img src="{{ asset('uploads/' ~ app.user.avatar) }}">
                 {% else %}
                     <img src="{{ asset('appImages/PersonPlaceholder.png') }}">
                 {% endif %}

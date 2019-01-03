@@ -63,7 +63,7 @@ final class EmailCheckHandler extends AbstractHandler
         // create and save new token in User
         $oneUser->setPasswordToken(uniqid(mt_rand(), true));
         $oneUser->setPasswordRequestedAt(new \DateTimeImmutable());
-        $this->repository->save();
+        $this->repository->save($oneUser);
 
         // sending token to User mail address
         $this->mailer->sendNewToken($oneUser);

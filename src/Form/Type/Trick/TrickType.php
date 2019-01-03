@@ -42,13 +42,15 @@ final class TrickType extends AbstractType
                 "entry_type"   => VideoType::class,
                 "allow_add"    => true,
                 "allow_delete" => true,
-                "by_reference" => false
+                "by_reference" => false,
+                "prototype"    => true
             ])
             ->add("images", CollectionType::class, [
                 "entry_type"   => ImageType::class,
                 "allow_add"    => true,
                 "allow_delete" => true,
-                "by_reference" => false
+                "by_reference" => false,
+                "prototype"    => true
             ])
             ->addEventListener(FormEvents::PRE_SET_DATA, function(FormEvent $event) {
                 /** @var Trick $trick */

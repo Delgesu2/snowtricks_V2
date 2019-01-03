@@ -19,6 +19,16 @@ class TrickRepository extends ServiceEntityRepository
         parent::__construct($registry, Trick::class);
     }
 
+    /**
+     * @param $trick
+     */
+    public function deleteTrick($trick)
+    {
+        $this->_em->remove($trick);
+        $this->_em->flush();
+    }
+
+
     // /**
     //  * @return Trick[] Returns an array of Trick objects
     //  */

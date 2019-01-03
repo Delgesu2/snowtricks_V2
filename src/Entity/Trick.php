@@ -15,8 +15,7 @@ use Symfony\Component\Validator\Constraints as Assert;
  * @ORM\Entity(repositoryClass="App\Repository\TrickRepository")
  * @ORM\EntityListeners({
  *     "App\EntityListener\SlugTrickNameListener",
- *     "App\EntityListener\TimestampableTrickListener",
- *     "App\EntityListener\RandomImageListener"
+ *     "App\EntityListener\TimestampableTrickListener"
  * })
  */
 class Trick
@@ -75,11 +74,6 @@ class Trick
      */
     private $updatedAt;
 
-    /**
-     * @var string
-     * @ORM\Column(type="string")
-     */
-    private $mainImage;
 
     /**
      * @var Collection
@@ -246,11 +240,7 @@ class Trick
      */
     public function getRandomImage(): Image
     {
-        $criteria = Criteria::create()
-            ->setFirstResult(rand(0, $this->images->count() - 1))
-            ->setMaxResults(1)
-        ;
-        return $this->images->matching($criteria)->first();
+        return $this->images->get(array_rand($this->images->toArray()));
     }
 
     /**
@@ -258,7 +248,7 @@ class Trick
      */
     public function getMainImage(): string
     {
-        return $this->mainImage;
+        return $this->getRandomImage()->getPath();
     }
 
     /**

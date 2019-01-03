@@ -14,6 +14,8 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Routing\Annotation\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\ParamConverter;
 use Symfony\Component\Security\Http\Authentication\AuthenticationUtils;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
+
 
 /**
  * Class SecurityController
@@ -63,6 +65,8 @@ class SecurityController extends AbstractController
      * @Route("/forget", name="forget")
      *
      * @return \Symfony\Component\HttpFoundation\Response
+     *
+     * @IsGranted("IS_AUTHENTICATED_ANONYMOUSLY")
      */
     public function forget(EmailCheckHandler $handler)
     {
@@ -100,6 +104,14 @@ class SecurityController extends AbstractController
         return $this->render('security/password_reset.html.twig', [
             'form' => $handler->getView()
         ]);
+    }
+
+    /**
+     * @Route("/passwordchange", name="passwordchange")     *
+     */
+    public function passwordChange()
+    {
+       return $this->redirectToRoute('forget');
     }
 
 }

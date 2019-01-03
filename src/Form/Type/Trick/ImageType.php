@@ -21,8 +21,7 @@ final class ImageType extends AbstractType
     {
         $builder
             ->add('uploadFile', FileType::class, [
-                "required" => true,
-                "multiple" => true
+                "required" => true
             ])
         ;
     }

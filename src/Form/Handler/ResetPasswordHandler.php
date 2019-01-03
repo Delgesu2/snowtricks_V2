@@ -8,8 +8,6 @@
 
 namespace App\Form\Handler;
 
-
-use App\Entity\User;
 use App\Form\Type\Security\ResetPasswordType;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Component\Form\FormInterface;
@@ -17,12 +15,6 @@ use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
 
 final class ResetPasswordHandler extends AbstractHandler
 {
-    /**
-     * @var User
-     */
-    private $user;
-
-
 
     /**
      * @var EntityManagerInterface
@@ -43,7 +35,7 @@ final class ResetPasswordHandler extends AbstractHandler
 
 
     /**
-     *
+     * {@inheritdoc}
      */
     public function onSuccess(): void
     {
@@ -51,6 +43,9 @@ final class ResetPasswordHandler extends AbstractHandler
     }
 
 
+    /**
+     * {@inheritdoc}
+     */
     public function getFormType(): string
     {
         return ResetPasswordType::class;

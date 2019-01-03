@@ -85,9 +85,7 @@
                 <div class="field-body">
                     <div class="control">
 
-                      <!--<div data-rel="#images" class="file-label btn-add" oninput="showFiles()"></div>-->
                       <a href="#" data-rel="#images" class="btn-add">Ajouter une image</a>
-
 
                             <!-- div -->
                             <div
@@ -96,23 +94,12 @@
                                     data-prototype="{{ include("trick/prototypes/image.html.twig", { form: form.images.vars.prototype })|e("html_attr") }}"
                             >
 
-                          <!--  <span class="file-cta">
-                              <span class="file-icon">
-                                <i class="fas fa-upload"></i>
-                              </span>
-                              <span class="file-label">
-                                Choisir un ou des fichier(s)
-                              </span>
-                           </span> -->
-
                                 {% for image in form.images %}
                                     {{ include("trick/prototypes/image.html.twig", { form: image }) }}
                                 {% endfor %}
 
                             </div>
                     </div>
-
-                       <!-- <output id="loadedFiles"></output>  -->
 
                 </div>
             </div>

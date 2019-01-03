@@ -63,7 +63,7 @@ trait PasswordTrait
     /**
      * @return string
      */
-    public function getSalt(): string
+    public function getSalt(): ?string
     {
         return $this->salt;
     }
