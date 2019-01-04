@@ -8,6 +8,7 @@
 /public/appImages/
 /public/css/bulma.min.css/
 /public/uploads/
+.env
 ###< symfony/framework-bundle ###
 
 ###> symfony/phpunit-bridge ###

@@ -57,7 +57,7 @@
                                     <div class="tile is-parent is-4">
                                         <div class="tile is-child box">
                                             <figure class="image is-3by2">
-                                                <img src="{{ asset('uploads/' ~ image ?? '') }}" alt="{{ trick.name ?? '' }}"
+                                                <img src="{{ asset('uploads/' ~ photo.path ?? '') }}" alt="{{ trick.name ?? '' }}"
                                                      class='img-zoomable'>
                                             </figure>
                                         </div>
@@ -152,7 +152,7 @@
                 <div class="media-content">
                     <div class="content">
                         <p>
-                            <strong>{{ comment.author.userName }}</strong>
+                            <strong>{{ comment.author.pseudo }}</strong>
                             <br>
                             {{ comment.content }}
                             <br>

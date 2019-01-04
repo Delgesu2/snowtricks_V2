@@ -52,6 +52,12 @@ class User implements UserInterface, \Serializable
     private $role;
 
     /**
+     * @var \DateTimeImmutable
+     * @ORM\Column(type="datetime_immutable", nullable=true)
+     */
+    private $updatedAt;
+
+    /**
      * User constructor.
      */
     public function __construct()
@@ -93,6 +99,14 @@ class User implements UserInterface, \Serializable
     }
 
     /**
+     * @param \DateTimeImmutable $updatedAt
+     */
+    public function setUpdatedAt(\DateTimeImmutable $updatedAt): void
+    {
+        $this->updatedAt = $updatedAt;
+    }
+
+    /**
      * @param string $role
      */
     public function setRole(string $role): void
@@ -101,7 +115,7 @@ class User implements UserInterface, \Serializable
     }
 
     /**
-     * @inheritdoc
+     * {@inheritdoc}
      */
     public function getRoles()
     {
@@ -109,7 +123,15 @@ class User implements UserInterface, \Serializable
     }
 
     /**
-     * @inheritdoc
+     * {@inheritdoc}
+     */
+    public function getUsername()
+    {
+        return $this->email;
+    }
+
+    /**
+     * {@inheritdoc}
      */
     public function eraseCredentials()
     {
@@ -121,8 +143,9 @@ class User implements UserInterface, \Serializable
     {
         return serialize(array(
             $this->id,
-            $this->userName,
-            $this->password
+            $this->email,
+            $this->password,
+            $this->salt
         ));
     }
 
@@ -132,9 +155,9 @@ class User implements UserInterface, \Serializable
     {
         list(
             $this->id,
-            $this->userName,
-            $this->password
+            $this->email,
+            $this->password,
+            $this->salt
             ) = unserialize($serialized);
     }
-
 }

@@ -19,7 +19,7 @@ use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
 
-class UpdateUserType extends AbstractType
+final class UpdateUserType extends AbstractType
 {
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
@@ -27,7 +27,7 @@ class UpdateUserType extends AbstractType
          * {@inheritdoc}
          */
         $builder
-            ->add('_username', TextType::class, [
+            ->add('pseudo', TextType::class, [
                 'required' => true
             ])
 
@@ -39,7 +39,6 @@ class UpdateUserType extends AbstractType
                 'multiple'   => false,
                 'required'   => false,
                 'data_class' => null
-                //'mapped'     => false
             ])
 
             ->add('submit', SubmitType::class, [

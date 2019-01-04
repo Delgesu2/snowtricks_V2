@@ -7,7 +7,6 @@ use App\Entity\User;
 use App\Form\Type\Security\UpdateUserType;
 use App\Repository\ImageRepository;
 use Doctrine\ORM\EntityManagerInterface;
-use Doctrine\ORM\UnitOfWork;
 use Symfony\Component\Filesystem\Filesystem;
 
 /**
@@ -61,15 +60,13 @@ final class UpdateUserHandler extends AbstractHandler
 
     /**
      * {@inheritdoc}
+     *
+     * @throws \Exception
      */
     public function onSuccess(): void
     {
-        /**
-        if($this->entityManager->getUnitOfWork()->getEntityState($this->data) === UnitOfWork::STATE_NEW) {
+        $this->user->setUpdatedAt(new \DateTimeImmutable());
 
-            $this->entityManager->persist($this->data);
-        }
-         * **/
         $this->entityManager->flush();
     }
 

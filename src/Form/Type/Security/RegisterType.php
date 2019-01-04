@@ -31,7 +31,7 @@ final class RegisterType extends AbstractType
          * {@inheritdoc}
          */
         $builder
-            ->add('_username', TextType::class, [
+            ->add('pseudo', TextType::class, [
                 'required' => true
             ])
 
@@ -43,7 +43,6 @@ final class RegisterType extends AbstractType
                 'multiple'   => false,
                 'required'   => false,
                 'data_class' => null
-                //'mapped'     => false
             ])
 
 

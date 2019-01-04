@@ -28,13 +28,13 @@
             <!-- Name -->
             <div class="field is-horizontal">
                 <div class="field-label is-normal">
-                    {{ form_label(form._username, 'Nom') }}
+                    {{ form_label(form.pseudo, 'Nom') }}
                 </div>
                 <div class="field-body">
                     <div class="field">
                         <div class="control">
-                            {{ form_widget(form._username, {'attr': {'class': 'input'}}) }}
-                            {{ form_errors(form._username) }}
+                            {{ form_widget(form.pseudo, {'attr': {'class': 'input'}}) }}
+                            {{ form_errors(form.pseudo) }}
                         </div>
                     </div>
                 </div>

@@ -28,13 +28,13 @@
             <!-- Name -->
             <div class="field is-horizontal">
                 <div class="field-label is-normal">
-                    {{ form_label(form._username, 'Nom') }}
+                    {{ form_label(form.pseudo, 'Nom') }}
                 </div>
                 <div class="field-body">
                     <div class="field">
                         <div class="control">
-                            {{ form_widget(form._username, {'attr': {'class': 'input'}}) }}
-                            {{ form_errors(form._username) }}
+                            {{ form_widget(form.pseudo, {'attr': {'class': 'input'}}) }}
+                            {{ form_errors(form.pseudo) }}
                         </div>
                     </div>
                 </div>
@@ -63,7 +63,7 @@
                 <div class="field-body">
                     <div class="control">
                         <div class="file">
-                            <label class="file-label" oninput="showFile()">
+                            <label class="file-label">
 
                                 {{ form_widget(form.uploadFile) }}
                                 {{ form_errors(form.uploadFile) }}
@@ -73,6 +73,15 @@
                         </div>
                     </div>
                 </div>
+
+                <span class="has-text-weight-semibold is-italic tag is-white">Photo actuelle</span>
+                <figure class="image is-64x64">
+                    {% if app.user.avatar is defined %}
+                    <img src="{{ asset('uploads/' ~ app.user.avatar) }}">
+                    {% else %}
+                    <img src="{{ asset('appImages/PersonPlaceholder.png') }}">
+                    {% endif %}
+                </figure>
 
             </div>
 

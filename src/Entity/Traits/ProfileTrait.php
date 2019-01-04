@@ -16,7 +16,7 @@ trait ProfileTrait
      * @var string
      * @ORM\Column(type="string")
      */
-    private $userName;
+    private $pseudo;
 
     /**
      * @var string
@@ -60,17 +60,17 @@ trait ProfileTrait
     /**
      * @return string
      */
-    public function getUserName(): ?string
+    public function getPseudo(): ?string
     {
-        return $this->userName;
+        return $this->pseudo;
     }
 
     /**
      * @param string $userName
      */
-    public function setUserName(string $userName): void
+    public function setPseudo(string $pseudo): void
     {
-        $this->userName = $userName;
+        $this->pseudo = $pseudo;
     }
 
     /**
