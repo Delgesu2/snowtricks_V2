@@ -22,11 +22,6 @@ final class UpdateUserHandler extends AbstractHandler
     private $entityManager;
 
     /**
-     * @var User
-     */
-    private $user;
-
-    /**
      * @var Filesystem
      */
     private $fileSystem;
@@ -40,19 +35,16 @@ final class UpdateUserHandler extends AbstractHandler
      * RegisterHandler constructor.
      *
      * @param EntityManagerInterface $entityManager
-     * @param User $user
      * @param Filesystem $filesystem
      * @param ImageRepository $repository
      */
     public function __construct(
         EntityManagerInterface $entityManager,
-        User                   $user,
         Filesystem             $filesystem,
         ImageRepository        $repository
     )
     {
         $this->entityManager    = $entityManager;
-        $this->user             = $user;
         $this->fileSystem       = $filesystem;
         $this->repository       = $repository;
     }
@@ -65,7 +57,11 @@ final class UpdateUserHandler extends AbstractHandler
      */
     public function onSuccess(): void
     {
-        $this->user->setUpdatedAt(new \DateTimeImmutable());
+        if (!\is_null($this->form->getData()->getUploadFile())) {
+            $this->fileSystem->remove('uploads/' . $this->data->getAvatar());
+        }
+
+        $this->data->setUpdatedAt(new \DateTimeImmutable());
 
         $this->entityManager->flush();
     }

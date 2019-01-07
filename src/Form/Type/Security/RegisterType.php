@@ -45,8 +45,6 @@ final class RegisterType extends AbstractType
                 'data_class' => null
             ])
 
-
-
             ->add('plainPassword', PasswordType::class, [
                 'required'    => true,
                 'constraints' => [

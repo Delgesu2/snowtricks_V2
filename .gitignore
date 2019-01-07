@@ -2,13 +2,15 @@
 ###> symfony/framework-bundle ###
 /.env.local
 /.env.*.local
+.env
 /public/bundles/
 /var/
 /vendor/
 /public/appImages/
 /public/css/bulma.min.css/
 /public/uploads/
-.env
+.gitignore
+
 ###< symfony/framework-bundle ###
 
 ###> symfony/phpunit-bridge ###
@@ -20,3 +22,7 @@
 /.web-server-pid
 ###< symfony/web-server-bundle ###
 /.idea
+
+###> phpunit/phpunit ###
+/phpunit.xml
+###< phpunit/phpunit ###
