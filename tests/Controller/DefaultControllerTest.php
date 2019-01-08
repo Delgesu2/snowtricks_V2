@@ -5,24 +5,22 @@ namespace App\Tests\Controller;
 use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
 use Symfony\Component\HTTPFoundation\Response;
 
-class DiaryControllerTest extends WebTestCase
-
+class DefaultControllerTest extends WebTestCase
 {
-
-    private $client = null;
-
-    public function setUp()
+    public function testHomepage()
     {
-        $this->client = static::createClient();
+        $client = static::createClient();
+        $client->request('GET', '/');
+
+        echo $client->getResponse()->getContent();
     }
 
-    public function testHomepageIsUp()
-    {
-        $this->client->request('GET', '/');
 
-        static::assertEquals(
-            Response::HTTP_OK,
-            $this->client->getResponse()->getStatusCode()
-        );
+    public function testTrickspage()
+    {
+        $client = static::createClient();
+        $client->request('GET', '/list');
+
+        echo  $client->getResponse()->getContent();
     }
 }

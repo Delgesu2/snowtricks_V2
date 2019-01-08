@@ -34,7 +34,7 @@ class SlugUserNameListener
      */
     public function prePersist(User $user, LifecycleEventArgs $eventArgs): void
     {
-        $user->setSlug($this->slugify::transform($user->getUserName()));
+     //   $user->setSlug($this->slugify::transform($user->getPseudo()));
     }
 
     /**
@@ -44,7 +44,7 @@ class SlugUserNameListener
      */
     public function preUpdate(User $user, LifecycleEventArgs $eventArgs): void
     {
-        $user->setSlug($this->slugify::transform($user->getUserName()));
+        $user->setSlug($this->slugify::transform($user->getPseudo()));
     }
 
 }

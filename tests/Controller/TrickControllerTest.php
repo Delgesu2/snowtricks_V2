@@ -8,7 +8,6 @@
 
 namespace App\Tests\Controller;
 
-
 use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
 
 class TrickControllerTest extends WebTestCase
@@ -19,12 +18,12 @@ class TrickControllerTest extends WebTestCase
 
         $crawler = $client->request('GET', '/add');
 
-        $form = $crawler->selectButton('Ajouter')->form();
+        $form = $crawler->selectButton('trick[submit]')->form();
         $form['trick[name]'] = ['backflip'];
         $form['trick[description]'] = ['Figure'];
         $client->submit($form);
 
-        $crawler = $client->followRedirect();
+        echo $client->getResponse()->getContent();
     }
 
 }

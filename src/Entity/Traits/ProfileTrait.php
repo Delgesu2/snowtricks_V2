@@ -66,7 +66,7 @@ trait ProfileTrait
     }
 
     /**
-     * @param string $userName
+     * @param string $pseudo
      */
     public function setPseudo(string $pseudo): void
     {

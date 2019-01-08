@@ -60,9 +60,9 @@ class CreateUserCommand extends Command
             // full description when running the command with "--help" option
                 ->setHelp('Cette commande vous permet de créer un nouveau compte utilisateur.')
 
-            ->addArgument('userName', InputArgument::REQUIRED, 'Username')
+            ->addArgument('pseudo', InputArgument::REQUIRED, 'Chose your username')
             ->addArgument('email', InputArgument::REQUIRED, 'Email')
-            ->addArgument('password', InputArgument::REQUIRED, 'Password')
+            ->addArgument('password', InputArgument::REQUIRED, 'Connection password')
             ;
     }
 
@@ -76,7 +76,7 @@ class CreateUserCommand extends Command
 
         $output->writeln('Vous allez créer un compte utilisateur.');
 
-        $output->writeln('Nom utilisateur: ' .$input->getArgument('userName'));
+        $output->writeln('Nom utilisateur: ' .$input->getArgument('pseudo'));
 
         $output->writeln('Adresse mail: ' .$input->getArgument('email'));
 
@@ -90,8 +90,6 @@ class CreateUserCommand extends Command
         $output->writeln('Compte utilisateur créé. Bravo.');
 
     }
-
-
 
 
 }
