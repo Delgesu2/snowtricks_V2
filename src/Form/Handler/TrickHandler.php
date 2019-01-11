@@ -4,6 +4,7 @@ namespace App\Form\Handler;
 use App\Form\Type\Trick\TrickType;
 use Doctrine\ORM\EntityManagerInterface;
 use Doctrine\ORM\UnitOfWork;
+use Symfony\Component\HttpFoundation\Session\Session;
 
 /**
  * Class TrickHandler
@@ -36,6 +37,10 @@ final class TrickHandler extends AbstractHandler
             $this->entityManager->persist($this->data);
         }
         $this->entityManager->flush();
+
+        $session = new Session();
+        $session->getFlashBag()->add('success', 'Nouvelle figure ajoutée à la base de données !');
+
     }
 
     /**

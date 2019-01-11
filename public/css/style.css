@@ -41,7 +41,10 @@ section {
     margin: 8px;
 }
 
- /* + and - buttons */
-#btnNewVideo, #btnDelVideo {
-    background-color: white;
+.charge {
+    margin-bottom: 35px;
+}
+
+.ghost {
+    padding-bottom: 30px;
 }

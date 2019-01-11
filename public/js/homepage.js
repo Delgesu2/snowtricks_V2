@@ -1,10 +1,3 @@
-/* responsiveness
-var modal = document.querySelector('.modal');
-modal.addEventListener('click', function(event) {
-    event.stopPropagation();
-    modal.classList.toggle('is-active');
-});
-*/
 
 /* Show more tricks landing page script */
 

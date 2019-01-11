@@ -15,7 +15,7 @@ use Doctrine\ORM\EntityManagerInterface;
 use Doctrine\ORM\UnitOfWork;
 use Symfony\Component\Security\Core\Authentication\Token\Storage\TokenStorageInterface;
 
-class CommentHandler extends AbstractHandler
+final class CommentHandler extends AbstractHandler
 {
     /**
      * @var EntityManagerInterface

@@ -1,10 +1,4 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: ronsard
- * Date: 08/01/19
- * Time: 00:01
- */
 
 namespace App\Tests\Controller;
 
@@ -15,15 +9,23 @@ class TrickControllerTest extends WebTestCase
     public function testAddTrick()
     {
         $client = static::createClient();
+        $crawler = $client->request('POST', '/add');
 
-        $crawler = $client->request('GET', '/add');
+        $buttonCrawlerNode = $crawler->selectButton('Ajouter');
 
-        $form = $crawler->selectButton('trick[submit]')->form();
-        $form['trick[name]'] = ['backflip'];
-        $form['trick[description]'] = ['Figure'];
+        $form = $buttonCrawlerNode->form();
+
+        $form['trick[name]'] = 'frontflip';
+        $form['trick[description]'] = 'aka Tamedog.A Tamedog is a cartwheel style Front Flip on your 
+        snowboard that instantly makes you look pro or like you\'ve been shredding for years.';
+        $form['trick[category]']->select('Categorie N°1');
+        $form['images']->upload('image.png');
+        $form['videos'] = 'https://www.youtube.com/embed/X9DIG3Ux79E';
+
         $client->submit($form);
 
-        echo $client->getResponse()->getContent();
+        $client->followRedirect();
+
     }
 
 }

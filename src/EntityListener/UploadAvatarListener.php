@@ -59,11 +59,6 @@ class UploadAvatarListener
      */
     public function preUpdate(User $user, LifecycleEventArgs $eventArgs): void
     {
-       // $user->setAvatar(null);
-        //$eventArgs->getEntityManager()->flush();
-       // $eventArgs->getEntityManager()->remove($user->getAvatar());  réclame un objet
-      //  $this->filesystem->remove('uploads/' . $user->getAvatar());
-
         $this->upload($user);
     }
 

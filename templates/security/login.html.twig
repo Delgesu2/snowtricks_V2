@@ -12,7 +12,7 @@
     {{ form_start(form) }}
 
     <div class="columns is-mobile">
-        <div class="column is-10 is-offset-1">
+        <section class="column is-10 is-offset-1">
 
             <div class="hero is-info">
                 <div class="hero-body">
@@ -23,6 +23,12 @@
                     </div>
                 </div>
             </div>
+
+            <section>
+                <div class="content is-hidden-tablet">
+                    Pour créer un nouveau compte, cliquer <a href="/user/register"><strong>ici</strong></a>.
+                </div>
+            </section>
 
             <div class="section column is-6">  <!-- Name -->
 
@@ -64,8 +70,11 @@
 
             {{ form_widget(form.submit, {'attr': {'class': 'button is-warning'}, 'label': 'Envoyer'}) }}
 
-        </div>
+        </section>
     </div>
+
+        <div class="ghost"></div>
+
 
     {{ form_end(form) }}
         {% endblock %}

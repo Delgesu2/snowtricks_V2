@@ -26,7 +26,7 @@ class TrickController extends AbstractController
     public function add(TrickHandler $trickHandler)
     {
         if($trickHandler->handle(new Trick())) {
-            return $this->redirectToRoute('index');
+            return $this->redirectToRoute('list');
         }
 
         return $this->render("trick/edit.html.twig", [

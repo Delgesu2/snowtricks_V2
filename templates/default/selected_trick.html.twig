@@ -48,7 +48,7 @@
                 <!-- Responsive "See medias" button -->
                 <div class="button is-info is-hidden-tablet is-flex-mobile" id="show-medias">Voir médias</div>
 
-                <div class="columns is-hidden-mobile">
+                <div class="columns is-hidden-mobile" id="hide-columns">
 
                     <div class="column is-6"> <!-- Photos -->
                         {% for row in trick.images|batch(3) %}
@@ -182,6 +182,9 @@
 
             {% endif %}
 
+            <div class="ghost">
+            </div>
+
         </div>
     </div>
 
@@ -194,4 +197,5 @@
     <script>
         new Zooming().listen('.img-zoomable')
     </script>
+    <script defer src="{{ asset('/js/showMedias.js') }}"></script>
 {% endblock %}
