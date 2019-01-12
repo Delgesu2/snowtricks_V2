@@ -43,14 +43,19 @@ final class TrickType extends AbstractType
                 "allow_add"    => true,
                 "allow_delete" => true,
                 "by_reference" => false,
-                "prototype"    => true
+                "prototype"    => true,
+                "required"     => false,
+                "entry_options" => ['label' => false]
+
             ])
             ->add("images", CollectionType::class, [
                 "entry_type"   => ImageType::class,
                 "allow_add"    => true,
                 "allow_delete" => true,
                 "by_reference" => false,
-                "prototype"    => true
+                "prototype"    => true,
+                "required"     => false,
+                "entry_options" => ['label' => false]
             ])
             ->addEventListener(FormEvents::PRE_SET_DATA, function(FormEvent $event) {
                 /** @var Trick $trick */

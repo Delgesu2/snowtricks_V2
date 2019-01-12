@@ -39,7 +39,7 @@ final class TrickHandler extends AbstractHandler
         $this->entityManager->flush();
 
         $session = new Session();
-        $session->getFlashBag()->add('success', 'Nouvelle figure ajoutée à la base de données !');
+        $session->getFlashBag()->add('success', 'Figure enregistrée en base de données !');
 
     }
 

@@ -33,6 +33,7 @@ class Image
     /**
      * @var UploadedFile|null
      * @Assert\Image
+     *
      */
     private $uploadFile;
 

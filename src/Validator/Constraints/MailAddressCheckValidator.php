@@ -19,7 +19,7 @@ use Symfony\Component\Validator\Exception\UnexpectedTypeException;
  *
  * @package App\Validator\Constraints
  */
-class MailAddressCheckValidator extends ConstraintValidator
+final class MailAddressCheckValidator extends ConstraintValidator
 {
     /**
      * @var UserRepository

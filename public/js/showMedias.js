@@ -4,6 +4,7 @@ let showMedias = document.getElementById('show-medias'),
     columns = document.getElementById('hide-columns');
 
 showMedias.addEventListener('click', function () {
+
     columns.classList.toggle(hiddenClass);
 
         if (showMedias.innerHTML === "Voir médias") {

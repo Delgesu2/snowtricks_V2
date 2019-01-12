@@ -3,6 +3,7 @@
 namespace App\Form\Type\Trick;
 
 use App\Entity\Video;
+use App\Validator\Constraints\Youtube;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\FormBuilderInterface;
@@ -21,7 +22,8 @@ final class VideoType extends AbstractType
     {
         $builder
             ->add('path', TextType::class, [
-                "label" => "Lien de la video youtube :"
+                'label'       => 'Lien Youtube : ',
+                'constraints' => [new Youtube()]
             ])
         ;
     }

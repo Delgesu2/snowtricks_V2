@@ -19,7 +19,7 @@ class TrickControllerTest extends WebTestCase
         $form['trick[description]'] = 'aka Tamedog.A Tamedog is a cartwheel style Front Flip on your 
         snowboard that instantly makes you look pro or like you\'ve been shredding for years.';
         $form['trick[category]']->select('Categorie N°1');
-        $form['images']->upload('image.png');
+        $form['trick[images][0][uploadFile]']->upload('image.png');
         $form['videos'] = 'https://www.youtube.com/embed/X9DIG3Ux79E';
 
         $client->submit($form);
