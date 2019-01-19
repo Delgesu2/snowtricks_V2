@@ -35,14 +35,10 @@ class CreateUserCommand extends Command
     protected static $defaultName = 'app:create-user';
 
     public function __construct(
-        bool $requirePassword = false,
-        UserRepository $repository,
-        User           $user
+        UserRepository $repository
     )
     {
-        $this->requirePassword = $requirePassword;
         $this->repository      = $repository;
-        $this->user            = $user;
 
         parent::__construct();
     }
@@ -85,7 +81,13 @@ class CreateUserCommand extends Command
         $output->writeln('Role: ROLE_USER');
 
         // persisting Entity
-        $this->repository->save($this->user);
+        $user = new User();
+
+        $user->setPseudo($input->getArgument('pseudo'));
+        $user->setEmail($input->getArgument('email'));
+        $user->setPlainPassword($input->getArgument('password'));
+
+        $this->repository->save($user);
 
         $output->writeln('Compte utilisateur créé. Bravo.');
 
