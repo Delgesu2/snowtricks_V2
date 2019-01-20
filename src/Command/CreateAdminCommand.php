@@ -8,7 +8,7 @@
 
 namespace App\Command;
 
-use  App\Entity\User;
+use App\Entity\User;
 use App\Repository\UserRepository;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputArgument;
@@ -27,23 +27,12 @@ class CreateAdminCommand extends Command
      */
     private $user;
 
-    /**
-     * @var bool
-     */
-    private $requirePassword;
 
     protected static $defaultName = 'app:create-admin';
 
-    public function __construct(
-        bool $requirePassword = false,
-        UserRepository $repository,
-        User           $user
-    )
+    public function __construct(UserRepository $repository)
     {
-        $this->requirePassword = $requirePassword;
-        $this->repository      = $repository;
-        $this->user            = $user;
-
+        $this->repository = $repository;
         parent::__construct();
     }
 
@@ -85,12 +74,17 @@ class CreateAdminCommand extends Command
         $output->writeln('Role: ROLE_ADMIN');
 
         // persisting Entity
-        $this->repository->save($this->user);
+        $user = new User();
+
+        $user->setPseudo($input->getArgument('pseudo'));
+        $user->setEmail($input->getArgument('email'));
+        $user->setPlainPassword($input->getArgument('password'));
+
+        // persisting Entity
+        $this->repository->save($user);
 
         $output->writeln('Compte administrateur créé. Bravo.');
 
     }
-
-
 
 }

@@ -8,7 +8,7 @@
 
 namespace App\Command;
 
-use  App\Entity\User;
+use App\Entity\User;
 use App\Repository\UserRepository;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputArgument;
@@ -22,24 +22,11 @@ class CreateUserCommand extends Command
      */
     private $repository;
 
-    /**
-     * @var User
-     */
-    private $user;
-
-    /**
-     * @var bool
-     */
-    private $requirePassword;
-
     protected static $defaultName = 'app:create-user';
 
-    public function __construct(
-        UserRepository $repository
-    )
+    public function __construct(UserRepository $repository)
     {
-        $this->repository      = $repository;
-
+        $this->repository = $repository;
         parent::__construct();
     }
 
@@ -87,6 +74,7 @@ class CreateUserCommand extends Command
         $user->setEmail($input->getArgument('email'));
         $user->setPlainPassword($input->getArgument('password'));
 
+        // persisting Entity
         $this->repository->save($user);
 
         $output->writeln('Compte utilisateur créé. Bravo.');
