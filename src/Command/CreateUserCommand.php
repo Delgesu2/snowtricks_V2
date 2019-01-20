@@ -24,6 +24,11 @@ class CreateUserCommand extends Command
 
     protected static $defaultName = 'app:create-user';
 
+    /**
+     * CreateUserCommand constructor.
+     *
+     * @param UserRepository $repository
+     */
     public function __construct(UserRepository $repository)
     {
         $this->repository = $repository;
@@ -49,6 +54,12 @@ class CreateUserCommand extends Command
             ;
     }
 
+    /**
+     * @param InputInterface $input
+     * @param OutputInterface $output
+     *
+     * @return int|null|void
+     */
     protected function execute(InputInterface $input, OutputInterface $output)
     {
         $output->writeln([

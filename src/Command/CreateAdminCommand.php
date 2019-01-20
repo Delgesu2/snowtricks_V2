@@ -22,19 +22,19 @@ class CreateAdminCommand extends Command
      */
     private $repository;
 
-    /**
-     * @var User
-     */
-    private $user;
-
-
     protected static $defaultName = 'app:create-admin';
 
+    /**
+     * CreateAdminCommand constructor.
+     *
+     * @param UserRepository $repository
+     */
     public function __construct(UserRepository $repository)
     {
         $this->repository = $repository;
         parent::__construct();
     }
+
 
     protected function configure()
     {
@@ -55,6 +55,12 @@ class CreateAdminCommand extends Command
         ;
     }
 
+    /**
+     * @param InputInterface $input
+     * @param OutputInterface $output
+     *
+     * @return int|null|void
+     */
     protected function execute(InputInterface $input, OutputInterface $output)
     {
         $output->writeln([
