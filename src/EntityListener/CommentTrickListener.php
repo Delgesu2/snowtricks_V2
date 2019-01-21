@@ -20,11 +20,6 @@ class CommentTrickListener
     private $tokenStorage;
 
     /**
-     * @var Trick
-     */
-    private $trick;
-
-    /**
      * CommentTrickListener constructor.
      *
      * @param TokenStorageInterface $tokenStorage

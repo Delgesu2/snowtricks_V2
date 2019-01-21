@@ -3,9 +3,9 @@
 
 // cache vars
 
-var parent = document.querySelector('#container'),
- items  = parent.querySelectorAll('#row'),
- loadMoreBtn =  document.querySelector('#load-more-tricks'),
+var parent = document.querySelector("#container"),
+ items  = parent.querySelectorAll("#row"),
+ loadMoreBtn =  document.querySelector("#load-more-tricks"),
  maxItems = 1,
  hiddenClass = "visually-hidden";
 
@@ -16,16 +16,15 @@ var parent = document.querySelector('#container'),
     }
 });
 
- loadMoreBtn.addEventListener('click', function(){
+ loadMoreBtn.addEventListener("click", function(){
 
     [].forEach.call(document.querySelectorAll('.' + hiddenClass), function(item, idx){
-        console.log(item);
         if (idx <= maxItems - 1) {
             item.classList.remove(hiddenClass);
         }
 
-        if ( document.querySelectorAll('.' + hiddenClass).length === 0) {
-            loadMoreBtn.style.display = 'none';
+        if ( document.querySelectorAll("." + hiddenClass).length === 0) {
+            loadMoreBtn.style.display = "none";
         }
 
     });

@@ -1,9 +1,9 @@
-let showMedias = document.getElementById('show-medias'),
+let showMedias = document.getElementById("show-medias"),
     hiddenClass = "is-hidden-mobile",
      text = "Cacher médias",
-    columns = document.getElementById('hide-columns');
+    columns = document.getElementById("hide-columns");
 
-showMedias.addEventListener('click', function () {
+showMedias.addEventListener("click", function () {
 
     columns.classList.toggle(hiddenClass);
 

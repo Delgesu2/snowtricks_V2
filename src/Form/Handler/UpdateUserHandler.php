@@ -57,7 +57,7 @@ final class UpdateUserHandler extends AbstractHandler
      */
     public function onSuccess(): void
     {
-        if (!\is_null($this->form->getData()->getUploadFile())) {
+        if (($this->form->getData()->getUploadFile()) !==null) {
             $this->fileSystem->remove('uploads/' . $this->data->getAvatar());
         }
 

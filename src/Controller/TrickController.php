@@ -69,7 +69,7 @@ class TrickController extends AbstractController
     )
     {
         // delete file
-        if (!\is_null($trick->getImages())) {
+        if (($trick->getImages()) !==null) {
 
            foreach ($trick->getImages()->toArray() as $image)
            {
