@@ -1,5 +1,7 @@
 # snowtricks_V2
 
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/01ec2ca0c63b42b3a389fdd9c00c3a36)](https://app.codacy.com/app/Delgesu2/snowtricks_V2?utm_source=github.com&utm_medium=referral&utm_content=Delgesu2/snowtricks_V2&utm_campaign=Badge_Grade_Dashboard)
+
 New version of OpenClassrooms project n°6
 
 Community site for snowboard fans
