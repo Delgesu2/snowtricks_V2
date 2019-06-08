@@ -43,4 +43,4 @@ Add-ons
 -------
 * [PHPUnit](https://phpunit.de/): the PHP testing framework
 
-Here is the address for **Snowtricks** : [p6snowtricks.devxdemo.eu](http://p6snowtricks.devxdemo.eu/)
+Here is the address for **Snowtricks** : [p6snowtricks.devxdemo.eu](https://p6snowtricks.devxdemo.eu/)
